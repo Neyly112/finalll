@@ -22,113 +22,104 @@ namespace WindowsFormsApp3
             InitializeComponent();
             this.ma = ma;
             this.strSql = c.SqlConect();
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            label2.BackColor = System.Drawing.Color.Transparent;
+            label3.BackColor = System.Drawing.Color.Transparent;
+            label4.BackColor = System.Drawing.Color.Transparent;
+            label5.BackColor = System.Drawing.Color.Transparent;
+            LoadDanhSachNguoiThue();
+            LoadMaNguoiThueData();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LoadMaNguoiThueData()
         {
-            // Tạo kết nối SQL
             using (SqlConnection connection = new SqlConnection(strSql))
             {
-                sender = ma;
-                string receiver = textBox2.Text;
-                string content = textBox1.Text;
-                string sentDateTime = DateTime.Now.ToString();
-
-                // Mở kết nối
                 connection.Open();
 
-                //Truy vấn SQL
-                string query = "INSERT INTO Tin_nhan(Sender, Receiver, Content," +
-                    " SentDateTime, ReadStatus) VALUES (@sender, @receiver, @content, @sentDateTime, @ReadStatus)";
+                string query = "SELECT DISTINCT Sender FROM Tin_nhan WHERE ReadStatus = 0 and Receiver = @Receiver";
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Sender", sender);
-                    command.Parameters.AddWithValue("@Receiver", receiver);
-                    command.Parameters.AddWithValue("@Content", content);
-                    command.Parameters.AddWithValue("@sentDateTime", sentDateTime);
-                    command.Parameters.AddWithValue("@ReadStatus", 0);
+                    command.Parameters.AddWithValue("Receiver", ma);
+                    List<string> listMaNT = new List<string>(); // Create a list to store MaQuanLi values
 
-                    //Thực hiện INSERT
-                    command.ExecuteNonQuery();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            listMaNT.Add(reader.GetString(0)); // Get the value at index 0 (MaQuanLi)
+                        }
+                    }
 
-                    MessageBox.Show("Gửi tin nhắn thành công !");
+                    comboBox1.DataSource = listMaNT; // Set the combobox data source to the list
                 }
+
                 connection.Close();
             }
         }
 
-        DataSet getLichSuTinNhan()
+        private void LoadMessageDetails(string sender)
         {
-            DataSet lichSuTinNhan = new DataSet();
-            string query = "SELECT Sender, Receiver, Content, SentDateTime FROM Tin_nhan" +
-                " WHERE Sender = @maNT or Receiver = @maNT";
-            using (SqlConnection conn = new SqlConnection(strSql))
+            using (SqlConnection connection = new SqlConnection(strSql))
             {
-                conn.Open();
-                SqlCommand command = new SqlCommand(query, conn);
-                command.Parameters.AddWithValue("@maNT", textBox3.Text);
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
-                sqlDataAdapter.Fill(lichSuTinNhan);
-                conn.Close();
-            }
-            return lichSuTinNhan;
-        }
+                connection.Open();
 
-        DataSet getTinNhan()
-        {
-            DataSet tinNhan = new DataSet();
-            string query = "SELECT Sender, Receiver, Content, SentDateTime FROM Tin_nhan" +
-                " WHERE ReadStatus = 0 and Receiver = @maQL";
-            using (SqlConnection conn = new SqlConnection(strSql))
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand(query, conn);
-                command.Parameters.AddWithValue("@maQL", ma);
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
-                sqlDataAdapter.Fill(tinNhan);
-                conn.Close();
-            }
-            return tinNhan;
-        }
+                string query = @"
+                    SELECT Sender, Content, SentDateTime
+                    FROM Tin_nhan
+                    WHERE Sender = @Sender AND Receiver = @Receiver AND ReadStatus = 0;
+                ";
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = getTinNhan().Tables[0];
-            using (SqlConnection conn = new SqlConnection(strSql))
-            {
-                conn.Open();
-
-                string query = "UPDATE Tin_nhan SET ReadStatus = 1 WHERE ReadStatus = 0 and Receiver = @maQL";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    cmd.Parameters.AddWithValue("@maQL", ma);
-                    cmd.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("@Sender", sender);
+                    command.Parameters.AddWithValue("@Receiver", ma);
+
+                    DataTable messageDetails = new DataTable();
+                    messageDetails.Load(command.ExecuteReader());
+
+                    dataGridView1.DataSource = messageDetails; // Bind data to datagridview
                 }
-                conn.Close();
+
+                connection.Close();
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (textBox3.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập mã người thuê !");
-                return;
-            }
-            dataGridView1.DataSource = getLichSuTinNhan().Tables[0];
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
             trangchu t = new trangchu(ma);
             t.ShowDialog();
+        }
+
+        
+
+        private void LoadDanhSachNguoiThue()
+        {
+            using (SqlConnection connection = new SqlConnection(strSql))
+            {
+                connection.Open();
+
+                string query = "SELECT DISTINCT MaNguoiThue FROM Nguoi_thue";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    List<string> listMaNT = new List<string>(); // Create a list to store MaQuanLi values
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            listMaNT.Add(reader.GetString(0)); // Get the value at index 0 (MaQuanLi)
+                        }
+                    }
+
+                    comboBox2.DataSource = listMaNT; // Set the combobox data source to the list
+                }
+
+                connection.Close();
+            }
         }
 
         private void FormHoTroKhachHang_Load(object sender, EventArgs e)
@@ -136,9 +127,109 @@ namespace WindowsFormsApp3
 
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập nội dung tin nhắn !");
+                return;
+            }
+            string query = "INSERT INTO Tin_nhan(Sender, Receiver, Content, SentDateTime, ReadStatus) VALUES (@Sender, @Receiver, @Content, @SentDateTime, @ReadStatus)";
+            using (SqlConnection connection = new SqlConnection(strSql))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Sender", ma);
+                command.Parameters.AddWithValue("@Receiver", comboBox1.SelectedItem.ToString());
+                command.Parameters.AddWithValue("@Content", textBox1.Text);
+                command.Parameters.AddWithValue("@SentDateTime", DateTime.Now.ToString());
+                command.Parameters.AddWithValue("@ReadStatus", 0);
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Gửi tin nhắn thành công !");
+                connection.Close();
+            }
+            string query1 = "UPDATE Tin_nhan SET ReadStatus = 1 WHERE Sender = @Sender " +
+                "and Receiver = @Receiver";
+            using (SqlConnection conn = new SqlConnection(strSql))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query1, conn);
+                cmd.Parameters.AddWithValue("@Sender", comboBox2.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@Receiver", ma);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập nội dung tin nhắn !");
+                return;
+            }
+            string query = "INSERT INTO Tin_nhan(Sender, Receiver, Content, SentDateTime, ReadStatus) VALUES (@Sender, @Receiver, @Content, @SentDateTime, @ReadStatus)";
+            using (SqlConnection connection = new SqlConnection(strSql))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Sender", ma);
+                command.Parameters.AddWithValue("@Receiver", comboBox2.SelectedItem.ToString());
+                command.Parameters.AddWithValue("@Content", textBox1.Text);
+                command.Parameters.AddWithValue("@SentDateTime", DateTime.Now.ToString());
+                command.Parameters.AddWithValue("@ReadStatus", 0);
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Gửi tin nhắn thành công !");
+                connection.Close();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT Sender, Content, SentDateTime FROM Tin_nhan WHERE " +
+                "(Sender = @maNT and Receiver = @maQL) OR " +
+                "(Sender = @maQL and Receiver = @maNT)";
+            using (SqlConnection connection = new SqlConnection(strSql))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@maNT", comboBox2.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@maQL", ma);
+                DataTable lsTinNhan = new DataTable();
+                lsTinNhan.Load(cmd.ExecuteReader());
+                connection.Close();
+                dataGridView1.DataSource = lsTinNhan;
+            }
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex > -1) // Check if an item is selected
+            {
+                string selectedSender = (string)comboBox1.SelectedItem;
+                LoadMessageDetails(selectedSender); // Call the new method to load details
+            }
         }
     }
 }
