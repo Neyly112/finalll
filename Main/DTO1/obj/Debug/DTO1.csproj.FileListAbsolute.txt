@@ -10,3 +10,9 @@ D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\DTO1\obj\Debug\DTO1.csproj.AssemblyRefere
 D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\DTO1\obj\Debug\DTO1.csproj.CoreCompileInputs.cache
 D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\DTO1\obj\Debug\DTO1.dll
 D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\DTO1\obj\Debug\DTO1.pdb
+D:\CNPM\QLCH2\finalll\Main\DTO1\bin\Debug\DTO1.dll
+D:\CNPM\QLCH2\finalll\Main\DTO1\bin\Debug\DTO1.pdb
+D:\CNPM\QLCH2\finalll\Main\DTO1\obj\Debug\DTO1.csproj.AssemblyReference.cache
+D:\CNPM\QLCH2\finalll\Main\DTO1\obj\Debug\DTO1.csproj.CoreCompileInputs.cache
+D:\CNPM\QLCH2\finalll\Main\DTO1\obj\Debug\DTO1.dll
+D:\CNPM\QLCH2\finalll\Main\DTO1\obj\Debug\DTO1.pdb

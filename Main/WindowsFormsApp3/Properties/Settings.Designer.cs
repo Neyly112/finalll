@@ -44,5 +44,16 @@ namespace WindowsFormsApp3.Properties {
                 return ((string)(this["Database2ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TANNHA\\TANNHA;Initial Catalog=QLCH2;Integrated Security=True;Encrypt=" +
+            "True;TrustServerCertificate=True")]
+        public string QLCH2ConnectionString {
+            get {
+                return ((string)(this["QLCH2ConnectionString"]));
+            }
+        }
     }
 }

@@ -459,6 +459,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLCH1DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLCH2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLCH2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLCH2DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLCH2DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="quenMK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -696,6 +706,28 @@
     </None>
     <None Include="QLCH1DataSet.xss">
       <DependentUpon>QLCH1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLCH2DataSet.xsc">
+      <DependentUpon>QLCH2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLCH2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLCH2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLCH2DataSet.xss">
+      <DependentUpon>QLCH2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLCH2DataSet1.xsc">
+      <DependentUpon>QLCH2DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLCH2DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLCH2DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLCH2DataSet1.xss">
+      <DependentUpon>QLCH2DataSet1.xsd</DependentUpon>
     </None>
     <None Include="Resources\logo.jpg" />
   </ItemGroup>
