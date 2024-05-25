@@ -1,0 +1,66 @@
+D:\Bai Tap\github1\CNPMfina\Main\BLL1\bin\Debug\BLL1.dll
+D:\Bai Tap\github1\CNPMfina\Main\BLL1\bin\Debug\BLL1.pdb
+D:\Bai Tap\github1\CNPMfina\Main\BLL1\bin\Debug\DAO1.dll
+D:\Bai Tap\github1\CNPMfina\Main\BLL1\bin\Debug\DTO1.dll
+D:\Bai Tap\github1\CNPMfina\Main\BLL1\bin\Debug\DAO1.pdb
+D:\Bai Tap\github1\CNPMfina\Main\BLL1\bin\Debug\DTO1.pdb
+D:\Bai Tap\github1\CNPMfina\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+D:\Bai Tap\github1\CNPMfina\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+D:\Bai Tap\github1\CNPMfina\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
+D:\Bai Tap\github1\CNPMfina\Main\BLL1\obj\Debug\BLL1.dll
+D:\Bai Tap\github1\CNPMfina\Main\BLL1\obj\Debug\BLL1.pdb
+D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\BLL1\bin\Debug\BLL1.dll
+D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\BLL1\bin\Debug\BLL1.pdb
+D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\BLL1\bin\Debug\DAO1.dll
+D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\BLL1\bin\Debug\DTO1.dll
+D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\BLL1\bin\Debug\DAO1.pdb
+D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\BLL1\bin\Debug\DTO1.pdb
+D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
+D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\BLL1\obj\Debug\BLL1.dll
+D:\CNPM\QuanLiCanHoFinal\CNPMfina\Main\BLL1\obj\Debug\BLL1.pdb
+C:\Users\Asus\OneDrive\Desktop\Project_CNPM\App\Main\BLL1\bin\Debug\BLL1.dll
+C:\Users\Asus\OneDrive\Desktop\Project_CNPM\App\Main\BLL1\bin\Debug\BLL1.pdb
+C:\Users\Asus\OneDrive\Desktop\Project_CNPM\App\Main\BLL1\bin\Debug\DAO1.dll
+C:\Users\Asus\OneDrive\Desktop\Project_CNPM\App\Main\BLL1\bin\Debug\DTO1.dll
+C:\Users\Asus\OneDrive\Desktop\Project_CNPM\App\Main\BLL1\bin\Debug\DAO1.pdb
+C:\Users\Asus\OneDrive\Desktop\Project_CNPM\App\Main\BLL1\bin\Debug\DTO1.pdb
+C:\Users\Asus\OneDrive\Desktop\Project_CNPM\App\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+C:\Users\Asus\OneDrive\Desktop\Project_CNPM\App\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+C:\Users\Asus\OneDrive\Desktop\Project_CNPM\App\Main\BLL1\obj\Debug\BLL1.csproj.CopyComplete
+C:\Users\Asus\OneDrive\Desktop\Project_CNPM\App\Main\BLL1\obj\Debug\BLL1.dll
+C:\Users\Asus\OneDrive\Desktop\Project_CNPM\App\Main\BLL1\obj\Debug\BLL1.pdb
+D:\Download\20052024\Main\BLL1\bin\Debug\BLL1.dll
+D:\Download\20052024\Main\BLL1\bin\Debug\BLL1.pdb
+D:\Download\20052024\Main\BLL1\bin\Debug\DAO1.dll
+D:\Download\20052024\Main\BLL1\bin\Debug\DTO1.dll
+D:\Download\20052024\Main\BLL1\bin\Debug\DAO1.pdb
+D:\Download\20052024\Main\BLL1\bin\Debug\DTO1.pdb
+D:\Download\20052024\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+D:\Download\20052024\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+D:\Download\20052024\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
+D:\Download\20052024\Main\BLL1\obj\Debug\BLL1.dll
+D:\Download\20052024\Main\BLL1\obj\Debug\BLL1.pdb
+E:\GITHUB_AN\Finall\Main\BLL1\bin\Debug\BLL1.dll
+E:\GITHUB_AN\Finall\Main\BLL1\bin\Debug\BLL1.pdb
+E:\GITHUB_AN\Finall\Main\BLL1\bin\Debug\DAO1.dll
+E:\GITHUB_AN\Finall\Main\BLL1\bin\Debug\DTO1.dll
+E:\GITHUB_AN\Finall\Main\BLL1\bin\Debug\DAO1.pdb
+E:\GITHUB_AN\Finall\Main\BLL1\bin\Debug\DTO1.pdb
+E:\GITHUB_AN\Finall\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+E:\GITHUB_AN\Finall\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+E:\GITHUB_AN\Finall\Main\BLL1\obj\Debug\BLL1.csproj.CopyComplete
+E:\GITHUB_AN\Finall\Main\BLL1\obj\Debug\BLL1.dll
+E:\GITHUB_AN\Finall\Main\BLL1\obj\Debug\BLL1.pdb
+D:\Bai Tap\Cuu2\Finall\Main\BLL1\bin\Debug\BLL1.dll
+D:\Bai Tap\Cuu2\Finall\Main\BLL1\bin\Debug\BLL1.pdb
+D:\Bai Tap\Cuu2\Finall\Main\BLL1\bin\Debug\DAO1.dll
+D:\Bai Tap\Cuu2\Finall\Main\BLL1\bin\Debug\DTO1.dll
+D:\Bai Tap\Cuu2\Finall\Main\BLL1\bin\Debug\DAO1.pdb
+D:\Bai Tap\Cuu2\Finall\Main\BLL1\bin\Debug\DTO1.pdb
+D:\Bai Tap\Cuu2\Finall\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+D:\Bai Tap\Cuu2\Finall\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+D:\Bai Tap\Cuu2\Finall\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
+D:\Bai Tap\Cuu2\Finall\Main\BLL1\obj\Debug\BLL1.dll
+D:\Bai Tap\Cuu2\Finall\Main\BLL1\obj\Debug\BLL1.pdb
