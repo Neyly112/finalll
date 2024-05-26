@@ -68,7 +68,7 @@ namespace WindowsFormsApp3
                 string query = @"
                     SELECT Sender, Content, SentDateTime
                     FROM Tin_nhan
-                    WHERE Sender = @Sender AND Receiver = @Receiver AND ReadStatus = 0;
+                    WHERE Sender = @Sender AND Receiver = @Receiver AND ReadStatus = 0 ORDER BY SentDateTime DESC;
                 ";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -145,41 +145,7 @@ namespace WindowsFormsApp3
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập nội dung tin nhắn !");
-                return;
-            }
-            string query = "INSERT INTO Tin_nhan(Sender, Receiver, Content, SentDateTime, ReadStatus) VALUES (@Sender, @Receiver, @Content, @SentDateTime, @ReadStatus)";
-            using (SqlConnection connection = new SqlConnection(strSql))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Sender", ma);
-                command.Parameters.AddWithValue("@Receiver", comboBox1.SelectedItem.ToString());
-                command.Parameters.AddWithValue("@Content", textBox1.Text);
-                command.Parameters.AddWithValue("@SentDateTime", DateTime.Now.ToString());
-                command.Parameters.AddWithValue("@ReadStatus", 0);
-                command.ExecuteNonQuery();
-
-                MessageBox.Show("Gửi tin nhắn thành công !");
-                connection.Close();
-            }
-            string query1 = "UPDATE Tin_nhan SET ReadStatus = 1 WHERE Sender = @Sender " +
-                "and Receiver = @Receiver";
-            using (SqlConnection conn = new SqlConnection(strSql))
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(query1, conn);
-                cmd.Parameters.AddWithValue("@Sender", comboBox2.SelectedItem.ToString());
-                cmd.Parameters.AddWithValue("@Receiver", ma);
-                cmd.ExecuteNonQuery();
-            }
-        }
+        }       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -203,13 +169,27 @@ namespace WindowsFormsApp3
                 MessageBox.Show("Gửi tin nhắn thành công !");
                 connection.Close();
             }
+            if(dataGridView1.Rows.Count != 0)
+            {
+                string query1 = "UPDATE Tin_nhan SET ReadStatus = 1 WHERE Sender = @Sender " +
+                "and Receiver = @Receiver";
+                using (SqlConnection conn = new SqlConnection(strSql))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query1, conn);
+                    cmd.Parameters.AddWithValue("@Sender", comboBox2.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@Receiver", ma);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             string query = "SELECT Sender, Content, SentDateTime FROM Tin_nhan WHERE " +
                 "(Sender = @maNT and Receiver = @maQL) OR " +
-                "(Sender = @maQL and Receiver = @maNT)";
+                "(Sender = @maQL and Receiver = @maNT) ORDER BY SentDateTime DESC";
             using (SqlConnection connection = new SqlConnection(strSql))
             {
                 connection.Open();

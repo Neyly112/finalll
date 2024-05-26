@@ -35,6 +35,8 @@
             this.tinnhanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tinnhanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.qLCH2DataSet1 = new WindowsFormsApp3.QLCH2DataSet1();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.qLCH2DataSet1 = new WindowsFormsApp3.QLCH2DataSet1();
-            this.tinnhanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tin_nhanTableAdapter1 = new WindowsFormsApp3.QLCH2DataSet1TableAdapters.Tin_nhanTableAdapter();
             this.senderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,9 +54,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinnhanBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinnhanBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tin_nhanTableAdapter
@@ -91,6 +91,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -103,8 +105,18 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(879, 222);
+            this.dataGridView1.Size = new System.Drawing.Size(617, 222);
             this.dataGridView1.TabIndex = 53;
+            // 
+            // tinnhanBindingSource2
+            // 
+            this.tinnhanBindingSource2.DataMember = "Tin_nhan";
+            this.tinnhanBindingSource2.DataSource = this.qLCH2DataSet1;
+            // 
+            // qLCH2DataSet1
+            // 
+            this.qLCH2DataSet1.DataSetName = "QLCH2DataSet1";
+            this.qLCH2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label4
             // 
@@ -183,12 +195,13 @@
             this.label1.BackColor = System.Drawing.Color.Khaki;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(675, 1);
+            this.label1.Location = new System.Drawing.Point(542, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(405, 100);
             this.label1.TabIndex = 46;
             this.label1.Text = "YÊU CẦU HỖ TRỢ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
@@ -209,16 +222,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(423, 99);
             this.textBox1.TabIndex = 44;
-            // 
-            // qLCH2DataSet1
-            // 
-            this.qLCH2DataSet1.DataSetName = "QLCH2DataSet1";
-            this.qLCH2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tinnhanBindingSource2
-            // 
-            this.tinnhanBindingSource2.DataMember = "Tin_nhan";
-            this.tinnhanBindingSource2.DataSource = this.qLCH2DataSet1;
             // 
             // tin_nhanTableAdapter1
             // 
@@ -265,6 +268,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.MinimumSize = new System.Drawing.Size(1918, 1018);
             this.Name = "FormYeuCauHoTro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormYeuCauHoTro";
@@ -273,9 +277,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinnhanBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinnhanBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
