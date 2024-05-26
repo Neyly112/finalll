@@ -18,6 +18,10 @@ namespace WindowsFormsApp3
         SqlConnection sql = null;
         string strSql;
         string mk;
+        private int soLanThu = 0;
+        private const int soLanThuToiDa = 5;
+        private DateTime? thoiGianKhoa = null;
+        private const int thoiGianChoPhut = 10;
         public FormDMKQL(string ma)
         {
             InitializeComponent();
@@ -27,58 +31,109 @@ namespace WindowsFormsApp3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ((tbMkCu.Texts == "") || (tbMkMoi.Texts == "") || (tbXacNhan.Texts == ""))
+            if (thoiGianKhoa.HasValue)
+            {
+                TimeSpan thoiGianDaQua = DateTime.Now - thoiGianKhoa.Value;
+                if (thoiGianDaQua.TotalMinutes < thoiGianChoPhut)
+                {
+                    MessageBox.Show($"Bạn đã nhập sai mật khẩu quá 5 lần. Vui lòng thử lại sau {thoiGianChoPhut - thoiGianDaQua.TotalMinutes:F0} phút.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    // Đặt lại số lần thử và thời gian khóa sau khi hết thời gian chờ
+                    soLanThu = 0;
+                    thoiGianKhoa = null;
+                }
+            }
+
+            // Kiểm tra nếu bất kỳ ô văn bản nào trống
+            if (string.IsNullOrEmpty(tbMkCu.Texts) || string.IsNullOrEmpty(tbMkMoi.Texts) || string.IsNullOrEmpty(tbXacNhan.Texts))
             {
                 MessageBox.Show("Vui lòng nhập thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (tbMkCu.Texts.ToString() == tbMkMoi.Texts.ToString())
+
+            // Kiểm tra nếu mật khẩu mới trùng với mật khẩu cũ
+            if (tbMkCu.Texts == tbMkMoi.Texts)
             {
                 MessageBox.Show("Mật khẩu mới trùng mật khẩu cũ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (tbMkMoi.Texts != tbXacNhan.Texts)
+
+            // Kiểm tra nếu mật khẩu xác nhận không khớp với mật khẩu mới
+            if (tbXacNhan.Texts != tbMkMoi.Texts)
             {
                 MessageBox.Show("Sai mật khẩu xác nhận.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             string matKhauCu = tbMkCu.Texts;
             string mkMoi = tbMkMoi.Texts;
-            string mkXacNhan = tbXacNhan.Texts;
-            if (sql == null)
-            {
-                sql = new SqlConnection(strSql);
-            }
-            if (sql.State == ConnectionState.Closed)
-            {
-                sql.Open();
-            }
 
-            SqlCommand sqlCm = new SqlCommand();
-            sqlCm.CommandType = CommandType.Text;
-            sqlCm.CommandText = "Select MatKhau from Quan_li where MaQuanLi = '" + ma + "'";
-            sqlCm.Connection = sql;
-            SqlDataReader reader = sqlCm.ExecuteReader();
-            while (reader.Read())
-            {
-                string tmp = reader.GetString(0);
-                mk = tmp;
+            // Định nghĩa chuỗi kết nối và truy vấn SQL sử dụng câu lệnh có tham số để ngăn ngừa SQL Injection
+            string connectionString = strSql;
+            string query = "SELECT MatKhau FROM Quan_li WHERE MaQuanLi = @ma";
 
-            }
-            reader.Close();
-            sql.Close();
-            if (mk != matKhauCu)
+            try
             {
-                MessageBox.Show("Sai mật khẩu cũ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                using (SqlConnection sql = new SqlConnection(connectionString))
+                {
+                    sql.Open();
+
+                    using (SqlCommand sqlCm = new SqlCommand(query, sql))
+                    {
+                        sqlCm.Parameters.AddWithValue("@ma", ma);
+
+                        using (SqlDataReader reader = sqlCm.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string matKhauHienTaiTuDb = reader.GetString(0);
+
+                                if (matKhauHienTaiTuDb != matKhauCu)
+                                {
+                                    soLanThu++;
+                                    if (soLanThu >= soLanThuToiDa)
+                                    {
+                                        thoiGianKhoa = DateTime.Now;
+                                        MessageBox.Show("Bạn đã nhập sai mật khẩu quá 5 lần. Vui lòng thử lại sau 10 phút.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        VoHieuHoaNhap();
+                                        return;
+                                    }
+
+                                    MessageBox.Show($"Sai mật khẩu cũ. Bạn còn {soLanThuToiDa - soLanThu} lần thử.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Không tìm thấy tài khoản.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                        }
+                    }
+
+                    // Cập nhật mật khẩu nếu mật khẩu cũ khớp
+                    query = "UPDATE Quan_li SET MatKhau = @newPassword WHERE MaQuanLi = @ma";
+                    using (SqlCommand updateCm = new SqlCommand(query, sql))
+                    {
+                        updateCm.Parameters.AddWithValue("@newPassword", mkMoi);
+                        updateCm.Parameters.AddWithValue("@ma", ma);
+                        updateCm.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Mật khẩu đã được thay đổi thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Hide();
+                FormThongTinQuanLy f = new FormThongTinQuanLy(ma);
+                f.ShowDialog();
             }
-            else
+            catch (Exception ex)
             {
-                upDateMK(mkMoi);
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            this.Hide();
-            FormThongTinQuanLy f = new FormThongTinQuanLy(ma);
-            f.ShowDialog();
 
         }
 
@@ -89,6 +144,14 @@ namespace WindowsFormsApp3
             label3.BackColor = System.Drawing.Color.Transparent;
             pictureBox2.BackColor = System.Drawing.Color.Transparent;
             label4.BackColor = System.Drawing.Color.Transparent;
+        }
+
+        private void VoHieuHoaNhap()
+        {
+            tbMkCu.Enabled = false;
+            tbMkMoi.Enabled = false;
+            tbXacNhan.Enabled = false;
+            btnThoat.Enabled = false;
         }
         private void upDateMK(string mkMoi)
         {
@@ -122,6 +185,42 @@ namespace WindowsFormsApp3
             this.Hide();
             FormThongTinQuanLy f = new FormThongTinQuanLy(ma);
             f.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (tbMkMoi.PasswordChar)
+            {
+                pictureBox3.BringToFront();
+                tbMkMoi.PasswordChar = false;
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (!tbMkMoi.PasswordChar)
+            {
+                pictureBox1.BringToFront();
+                tbMkMoi.PasswordChar = true;
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (!tbXacNhan.PasswordChar)
+            {
+                pictureBox4.BringToFront();
+                tbXacNhan.PasswordChar = true;
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (tbXacNhan.PasswordChar)
+            {
+                pictureBox5.BringToFront();
+                tbXacNhan.PasswordChar = false;
+            }
         }
     }
 }

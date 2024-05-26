@@ -23,6 +23,8 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
             this.ma = ma;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

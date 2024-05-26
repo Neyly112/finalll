@@ -86,3 +86,14 @@ E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
 E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CopyComplete
 E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.dll
 E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.pdb
+E:\GITHUB_AN\Fiball6\finalll\Main\BLL1\bin\Debug\BLL1.dll
+E:\GITHUB_AN\Fiball6\finalll\Main\BLL1\bin\Debug\BLL1.pdb
+E:\GITHUB_AN\Fiball6\finalll\Main\BLL1\bin\Debug\DAO1.dll
+E:\GITHUB_AN\Fiball6\finalll\Main\BLL1\bin\Debug\DTO1.dll
+E:\GITHUB_AN\Fiball6\finalll\Main\BLL1\bin\Debug\DAO1.pdb
+E:\GITHUB_AN\Fiball6\finalll\Main\BLL1\bin\Debug\DTO1.pdb
+E:\GITHUB_AN\Fiball6\finalll\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+E:\GITHUB_AN\Fiball6\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+E:\GITHUB_AN\Fiball6\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CopyComplete
+E:\GITHUB_AN\Fiball6\finalll\Main\BLL1\obj\Debug\BLL1.dll
+E:\GITHUB_AN\Fiball6\finalll\Main\BLL1\obj\Debug\BLL1.pdb

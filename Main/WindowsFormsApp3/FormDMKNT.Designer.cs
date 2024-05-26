@@ -38,7 +38,15 @@
             this.tbMkCu = new WindowsFormsApp3.UI.UserControlBTN();
             this.tbXacNhan = new WindowsFormsApp3.UI.UserControlBTN();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -125,7 +133,7 @@
             this.tbMkMoi.Multiline = false;
             this.tbMkMoi.Name = "tbMkMoi";
             this.tbMkMoi.Padding = new System.Windows.Forms.Padding(7);
-            this.tbMkMoi.PasswordChar = false;
+            this.tbMkMoi.PasswordChar = true;
             this.tbMkMoi.Size = new System.Drawing.Size(349, 41);
             this.tbMkMoi.TabIndex = 99;
             this.tbMkMoi.Texts = "";
@@ -164,7 +172,7 @@
             this.tbXacNhan.Multiline = false;
             this.tbXacNhan.Name = "tbXacNhan";
             this.tbXacNhan.Padding = new System.Windows.Forms.Padding(7);
-            this.tbXacNhan.PasswordChar = false;
+            this.tbXacNhan.PasswordChar = true;
             this.tbXacNhan.Size = new System.Drawing.Size(349, 41);
             this.tbXacNhan.TabIndex = 101;
             this.tbXacNhan.Texts = "";
@@ -181,12 +189,60 @@
             this.label4.TabIndex = 100;
             this.label4.Text = "Xác nhận mật khẩu";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp3.Properties.Resources.mat1;
+            this.pictureBox1.Location = new System.Drawing.Point(670, 260);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 121;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::WindowsFormsApp3.Properties.Resources.mat2;
+            this.pictureBox3.Location = new System.Drawing.Point(670, 260);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 37);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 120;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::WindowsFormsApp3.Properties.Resources.mat1;
+            this.pictureBox4.Location = new System.Drawing.Point(670, 345);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(33, 37);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 123;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::WindowsFormsApp3.Properties.Resources.mat2;
+            this.pictureBox5.Location = new System.Drawing.Point(670, 345);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(33, 37);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 122;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
             // FormDMKNT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(812, 503);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.tbXacNhan);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbMkMoi);
@@ -202,6 +258,10 @@
             this.Text = "FormDMKNT";
             this.Load += new System.EventHandler(this.FormDMKNT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,5 +278,9 @@
         private UI.UserControlBTN tbMkCu;
         private UI.UserControlBTN tbXacNhan;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

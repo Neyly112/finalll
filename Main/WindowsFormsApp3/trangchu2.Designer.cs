@@ -306,9 +306,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gold;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(374, 178);
+            this.pictureBox1.Location = new System.Drawing.Point(374, 199);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 171);
+            this.pictureBox1.Size = new System.Drawing.Size(210, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
@@ -333,7 +333,7 @@
             this.button9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Location = new System.Drawing.Point(934, 426);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(196, 145);
+            this.button9.Size = new System.Drawing.Size(184, 145);
             this.button9.TabIndex = 72;
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -342,9 +342,9 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Gold;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(943, 435);
+            this.pictureBox8.Location = new System.Drawing.Point(943, 450);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(175, 83);
+            this.pictureBox8.Size = new System.Drawing.Size(160, 68);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 74;
             this.pictureBox8.TabStop = false;
