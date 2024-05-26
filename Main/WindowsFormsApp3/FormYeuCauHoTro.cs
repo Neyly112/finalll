@@ -91,9 +91,7 @@ namespace WindowsFormsApp3
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            trangchu2 t = new trangchu2(ma);
-            t.ShowDialog();
+            
         }
 
         private void LoadMaQuanLiData()
@@ -170,5 +168,11 @@ namespace WindowsFormsApp3
 
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            trangchu2 t = new trangchu2(ma);
+            t.ShowDialog();
+        }
     }
 }

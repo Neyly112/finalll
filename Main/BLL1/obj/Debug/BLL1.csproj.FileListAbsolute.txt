@@ -75,3 +75,28 @@ D:\CNPM\QLCH2\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
 D:\CNPM\QLCH2\finalll\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
 D:\CNPM\QLCH2\finalll\Main\BLL1\obj\Debug\BLL1.dll
 D:\CNPM\QLCH2\finalll\Main\BLL1\obj\Debug\BLL1.pdb
+<<<<<<< Updated upstream
+=======
+E:\Finall5\finalll\Main\BLL1\bin\Debug\BLL1.dll
+E:\Finall5\finalll\Main\BLL1\bin\Debug\BLL1.pdb
+E:\Finall5\finalll\Main\BLL1\bin\Debug\DAO1.dll
+E:\Finall5\finalll\Main\BLL1\bin\Debug\DTO1.dll
+E:\Finall5\finalll\Main\BLL1\bin\Debug\DAO1.pdb
+E:\Finall5\finalll\Main\BLL1\bin\Debug\DTO1.pdb
+E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CopyComplete
+E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.dll
+E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.pdb
+D:\CNPM\QLCH3\finalll\Main\BLL1\bin\Debug\BLL1.dll
+D:\CNPM\QLCH3\finalll\Main\BLL1\bin\Debug\BLL1.pdb
+D:\CNPM\QLCH3\finalll\Main\BLL1\bin\Debug\DAO1.dll
+D:\CNPM\QLCH3\finalll\Main\BLL1\bin\Debug\DTO1.dll
+D:\CNPM\QLCH3\finalll\Main\BLL1\bin\Debug\DAO1.pdb
+D:\CNPM\QLCH3\finalll\Main\BLL1\bin\Debug\DTO1.pdb
+D:\CNPM\QLCH3\finalll\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+D:\CNPM\QLCH3\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+D:\CNPM\QLCH3\finalll\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
+D:\CNPM\QLCH3\finalll\Main\BLL1\obj\Debug\BLL1.dll
+D:\CNPM\QLCH3\finalll\Main\BLL1\obj\Debug\BLL1.pdb
+>>>>>>> Stashed changes

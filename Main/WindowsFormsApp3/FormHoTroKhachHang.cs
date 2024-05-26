@@ -88,9 +88,7 @@ namespace WindowsFormsApp3
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            trangchu t = new trangchu(ma);
-            t.ShowDialog();
+            
         }
 
         
@@ -230,6 +228,13 @@ namespace WindowsFormsApp3
                 string selectedSender = (string)comboBox1.SelectedItem;
                 LoadMessageDetails(selectedSender); // Call the new method to load details
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            trangchu t = new trangchu(ma);
+            t.ShowDialog();
         }
     }
 }

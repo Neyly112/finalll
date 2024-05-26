@@ -35,6 +35,11 @@
             this.tinnhanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.senderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sentDateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tinnhanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.qLCH2DataSet1 = new WindowsFormsApp3.QLCH2DataSet1();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,19 +49,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.qLCH2DataSet1 = new WindowsFormsApp3.QLCH2DataSet1();
-            this.tinnhanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tin_nhanTableAdapter1 = new WindowsFormsApp3.QLCH2DataSet1TableAdapters.Tin_nhanTableAdapter();
-            this.senderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sentDateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tinnhanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinnhanBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinnhanBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tin_nhanTableAdapter
@@ -105,6 +106,40 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(879, 222);
             this.dataGridView1.TabIndex = 53;
+            // 
+            // senderDataGridViewTextBoxColumn
+            // 
+            this.senderDataGridViewTextBoxColumn.DataPropertyName = "Sender";
+            this.senderDataGridViewTextBoxColumn.HeaderText = "Người gửi";
+            this.senderDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.senderDataGridViewTextBoxColumn.Name = "senderDataGridViewTextBoxColumn";
+            this.senderDataGridViewTextBoxColumn.Width = 275;
+            // 
+            // contentDataGridViewTextBoxColumn
+            // 
+            this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
+            this.contentDataGridViewTextBoxColumn.HeaderText = "Nội dung";
+            this.contentDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
+            this.contentDataGridViewTextBoxColumn.Width = 275;
+            // 
+            // sentDateTimeDataGridViewTextBoxColumn
+            // 
+            this.sentDateTimeDataGridViewTextBoxColumn.DataPropertyName = "SentDateTime";
+            this.sentDateTimeDataGridViewTextBoxColumn.HeaderText = "Thời gian";
+            this.sentDateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sentDateTimeDataGridViewTextBoxColumn.Name = "sentDateTimeDataGridViewTextBoxColumn";
+            this.sentDateTimeDataGridViewTextBoxColumn.Width = 275;
+            // 
+            // tinnhanBindingSource2
+            // 
+            this.tinnhanBindingSource2.DataMember = "Tin_nhan";
+            this.tinnhanBindingSource2.DataSource = this.qLCH2DataSet1;
+            // 
+            // qLCH2DataSet1
+            // 
+            this.qLCH2DataSet1.DataSetName = "QLCH2DataSet1";
+            this.qLCH2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label4
             // 
@@ -183,7 +218,7 @@
             this.label1.BackColor = System.Drawing.Color.Khaki;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(675, 1);
+            this.label1.Location = new System.Drawing.Point(593, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(405, 100);
             this.label1.TabIndex = 46;
@@ -210,43 +245,21 @@
             this.textBox1.Size = new System.Drawing.Size(423, 99);
             this.textBox1.TabIndex = 44;
             // 
-            // qLCH2DataSet1
-            // 
-            this.qLCH2DataSet1.DataSetName = "QLCH2DataSet1";
-            this.qLCH2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tinnhanBindingSource2
-            // 
-            this.tinnhanBindingSource2.DataMember = "Tin_nhan";
-            this.tinnhanBindingSource2.DataSource = this.qLCH2DataSet1;
-            // 
             // tin_nhanTableAdapter1
             // 
             this.tin_nhanTableAdapter1.ClearBeforeFill = true;
             // 
-            // senderDataGridViewTextBoxColumn
+            // button4
             // 
-            this.senderDataGridViewTextBoxColumn.DataPropertyName = "Sender";
-            this.senderDataGridViewTextBoxColumn.HeaderText = "Người gửi";
-            this.senderDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.senderDataGridViewTextBoxColumn.Name = "senderDataGridViewTextBoxColumn";
-            this.senderDataGridViewTextBoxColumn.Width = 275;
-            // 
-            // contentDataGridViewTextBoxColumn
-            // 
-            this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
-            this.contentDataGridViewTextBoxColumn.HeaderText = "Nội dung";
-            this.contentDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
-            this.contentDataGridViewTextBoxColumn.Width = 275;
-            // 
-            // sentDateTimeDataGridViewTextBoxColumn
-            // 
-            this.sentDateTimeDataGridViewTextBoxColumn.DataPropertyName = "SentDateTime";
-            this.sentDateTimeDataGridViewTextBoxColumn.HeaderText = "Thời gian";
-            this.sentDateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sentDateTimeDataGridViewTextBoxColumn.Name = "sentDateTimeDataGridViewTextBoxColumn";
-            this.sentDateTimeDataGridViewTextBoxColumn.Width = 275;
+            this.button4.AutoSize = true;
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button4.Location = new System.Drawing.Point(1702, 534);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(100, 49);
+            this.button4.TabIndex = 55;
+            this.button4.Text = "Thoát";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FormYeuCauHoTro
             // 
@@ -254,6 +267,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
@@ -265,6 +279,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.MinimumSize = new System.Drawing.Size(1918, 1018);
             this.Name = "FormYeuCauHoTro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormYeuCauHoTro";
@@ -273,9 +288,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinnhanBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tinnhanBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLCH2DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +319,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn senderDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sentDateTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button4;
     }
 }
