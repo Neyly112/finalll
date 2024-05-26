@@ -132,7 +132,7 @@ namespace WindowsFormsApp3
         {
             DataSet lsTinNhan = new DataSet();
             string query = "SELECT Sender, Content, SentDateTime FROM Tin_nhan" +
-                " WHERE (Sender = @maNT and Receiver = @maQL) or (Sender = @maQL and Receiver = @maNT)";
+                " WHERE (Sender = @maNT and Receiver = @maQL) or (Sender = @maQL and Receiver = @maNT) ORDER BY SentDateTime DESC";
             using (SqlConnection conn = new SqlConnection(strSql))
             {
                 conn.Open();
@@ -150,7 +150,7 @@ namespace WindowsFormsApp3
         {
             DataSet tinNhanMoi = new DataSet();
             string query = "SELECT Sender, Content, SentDateTime FROM Tin_nhan" +
-                " WHERE Sender = @Sender and Receiver = @Receiver and ReadStatus = 0";
+                " WHERE Sender = @Sender and Receiver = @Receiver and ReadStatus = 0 ORDER BY SentDateTime DESC";
             using (SqlConnection conn = new SqlConnection(strSql))
             {
                 conn.Open();
@@ -170,5 +170,9 @@ namespace WindowsFormsApp3
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
