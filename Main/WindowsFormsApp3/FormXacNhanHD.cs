@@ -154,7 +154,7 @@ namespace WindowsFormsApp3
 
             SqlCommand sqlCm = new SqlCommand();
             sqlCm.CommandType = CommandType.Text;
-            sqlCm.CommandText = "Update Phong_cho_thue set TrangThaiPhong= N'Đã thuê' where MaPhong= '" + tenPhong + "'";
+            sqlCm.CommandText = "Update Phong_cho_thue set TrangThaiPhong= N'Đã cho thuê' where MaPhong= '" + tenPhong + "'";
             sqlCm.Connection = sql;
             sqlCm.ExecuteNonQuery();
             sql.Close();

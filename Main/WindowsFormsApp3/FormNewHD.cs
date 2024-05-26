@@ -107,8 +107,8 @@ namespace WindowsFormsApp3
         {
             
             NguoiThue n = new NguoiThue(txTen.Text.Trim(), tbDC.Text.Trim(), tbEmail.Text.Trim(), tbSDT.Text.Trim(),  "1", "1");
-            
-            
+
+
             if ((tbDC.Text.Trim() == "") || (tbEmail.Text.Trim() == "") || (tbSDT.Text.Trim() == "") || (tbSNG.Text.Trim() == "") || (txTen.Text.Trim() == ""))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -117,6 +117,11 @@ namespace WindowsFormsApp3
             if ((tbSDT.Text.Trim().Length != 10))
             {
                 MessageBox.Show("Số điện thoại không phù hợp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (checkSDT(tbSDT.Text.Trim()) == true)
+            {
+                MessageBox.Show("Số điện thoại bị trùng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (isEmail(tbEmail.Text.Trim()) == false)
@@ -185,6 +190,36 @@ namespace WindowsFormsApp3
             this.Hide();
             FormDanhSachHopDong f = new FormDanhSachHopDong(ma);
             f.ShowDialog();
+        }
+        private bool checkSDT(string sdt)
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "select SoDienThoai from Nguoi_thue where SoDienThoai = '" + sdt + "'";
+            sqlCm.Connection = sql;
+            SqlDataReader reader = sqlCm.ExecuteReader();
+            int kq = 0;
+            while (reader.Read())
+            {
+                kq = 1;
+            }
+            reader.Close();
+            if (kq == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
         private void funcAddKH(string emailKH, string dc, string sdt, string TenKh)
         {
