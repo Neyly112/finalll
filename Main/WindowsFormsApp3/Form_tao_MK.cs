@@ -198,6 +198,9 @@ namespace WindowsFormsApp3
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Cập nhật mật khẩu thành công.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Form1 f = new Form1();
+                        this.Hide();
+                        f.ShowDialog();
                     }
                     else
                     {

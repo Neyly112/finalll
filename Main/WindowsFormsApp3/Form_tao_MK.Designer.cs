@@ -158,7 +158,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::WindowsFormsApp3.Properties.Resources.mat1;
-            this.pictureBox6.Location = new System.Drawing.Point(431, 245);
+            this.pictureBox6.Location = new System.Drawing.Point(403, 270);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(22, 25);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -169,7 +169,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::WindowsFormsApp3.Properties.Resources.mat2;
-            this.pictureBox5.Location = new System.Drawing.Point(431, 276);
+            this.pictureBox5.Location = new System.Drawing.Point(403, 270);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(22, 25);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
