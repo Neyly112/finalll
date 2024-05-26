@@ -168,7 +168,12 @@ namespace WindowsFormsApp3
             }
             catch (Exception ex)
             {
+<<<<<<< Updated upstream
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+=======
+                MessageBox.Show("Sai mật khẩu12323 cũ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+>>>>>>> Stashed changes
             }
         }
 
