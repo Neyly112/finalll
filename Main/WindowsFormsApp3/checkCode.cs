@@ -14,6 +14,11 @@ namespace WindowsFormsApp3
 {
     public partial class checkCode : System.Windows.Forms.Form
     {
+        private int soLanThu = 0;
+        private const int soLanThuToiDa = 5;
+        private DateTime? thoiGianKhoa = null;
+        private const int thoiGianChoPhut = 10;
+
         int code;
         String sdt;
         String mail;
@@ -82,6 +87,22 @@ namespace WindowsFormsApp3
 
         private void check3() 
         {
+            if (thoiGianKhoa.HasValue)
+            {
+                TimeSpan thoiGianDaQua = DateTime.Now - thoiGianKhoa.Value;
+                if (thoiGianDaQua.TotalMinutes < thoiGianChoPhut)
+                {
+                    MessageBox.Show(this, $"Bạn đã nhập sai mã quá {soLanThuToiDa} lần. Vui lòng thử lại sau {thoiGianChoPhut - thoiGianDaQua.TotalMinutes:F0} phút.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    VoHieuHoaNhap();
+                    return;
+                }
+                else
+                {
+                    soLanThu = 0;
+                    thoiGianKhoa = null;
+                }
+            }
+
             if (textBox1.Text.Length != 1 || textBox2.Text.Length != 1 || textBox3.Text.Length != 1 || textBox4.Text.Length != 1)
             {
                 MessageBox.Show(this, "Mã xác nhận không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -90,7 +111,13 @@ namespace WindowsFormsApp3
             {
                 SqlConnection con = new SqlConnection(c.SqlConect());
                 String cd = textBox1.Text + textBox2.Text + textBox3.Text + textBox4.Text;
-                int cd1 = Convert.ToInt32(cd);
+                int cd1;
+                if (!int.TryParse(cd, out cd1))
+                {
+                    MessageBox.Show(this, "Mã xác nhận không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (cd1 == code)
                 {
                     MessageBox.Show(this, "Mã xác nhận chính xác", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -98,27 +125,31 @@ namespace WindowsFormsApp3
                     this.Hide();
                     timer1.Stop();
                     NMK.ShowDialog();
-                    /*con.Open();
-                    String sdtN = sdt;
-                    String sql = "UPDATE Nguoi_thue set MatKhau = N'" + mkN + "' WHERE SoDienThoai = '" + sdtN + "'";
-                    SqlCommand cmd = new SqlCommand(sql, con);
-                    int rdr = cmd.ExecuteNonQuery();
-                    if (rdr > 0)
-                    {
-                        MessageBox.Show(this, "Đổi mật khẩu thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Form1 form1 = new Form1();
-                        this.Hide();
-                        form1.ShowDialog();
-                    }
-                    else
-                        MessageBox.Show(this, "Lỗi, đổi mật khẩu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    con.Close();*/
                 }
                 else
                 {
-                    MessageBox.Show(this, "Mã xác nhận hết hạn hoặc mã không đúng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    soLanThu++;
+                    if (soLanThu >= soLanThuToiDa)
+                    {
+                        thoiGianKhoa = DateTime.Now;
+                        MessageBox.Show(this, "Bạn đã nhập sai mã quá 5 lần. Vui lòng thử lại sau 10 phút.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, $"Mã xác nhận hết hạn hoặc mã không đúng. Bạn còn {soLanThuToiDa - soLanThu} lần thử.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
+        }
+
+        private void VoHieuHoaNhap()
+        {
+            textBox1.Enabled = false;
+            textBox4.Enabled = false;
+            textBox3.Enabled = false;
+            textBox2.Enabled = false;
+
         }
 
         static void CloseAllForms()
@@ -240,7 +271,6 @@ namespace WindowsFormsApp3
         {
             code = 0;  // Đặt code thành null sau 1 phút
             timer1.Stop();
-            MessageBox.Show(this, "Mã xác nhận đã hết hạn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

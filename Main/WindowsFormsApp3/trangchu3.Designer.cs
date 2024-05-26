@@ -71,7 +71,7 @@
             this.button7.BackColor = System.Drawing.Color.Gold;
             this.button7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.button7.Location = new System.Drawing.Point(955, 71);
+            this.button7.Location = new System.Drawing.Point(1047, 66);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(173, 78);
@@ -86,7 +86,7 @@
             this.label8.BackColor = System.Drawing.Color.Gold;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label8.Location = new System.Drawing.Point(640, 572);
+            this.label8.Location = new System.Drawing.Point(767, 567);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(167, 23);
             this.label8.TabIndex = 59;
@@ -99,10 +99,10 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button5.Location = new System.Drawing.Point(584, 446);
+            this.button5.Location = new System.Drawing.Point(711, 441);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(267, 159);
+            this.button5.Size = new System.Drawing.Size(267, 165);
             this.button5.TabIndex = 55;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -113,7 +113,7 @@
             this.label3.BackColor = System.Drawing.Color.Gold;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(941, 384);
+            this.label3.Location = new System.Drawing.Point(1033, 379);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(167, 23);
             this.label3.TabIndex = 52;
@@ -126,7 +126,7 @@
             this.label4.BackColor = System.Drawing.Color.Gold;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(352, 572);
+            this.label4.Location = new System.Drawing.Point(484, 567);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(170, 23);
             this.label4.TabIndex = 51;
@@ -138,7 +138,7 @@
             this.label6.BackColor = System.Drawing.Color.Gold;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(757, 380);
+            this.label6.Location = new System.Drawing.Point(849, 375);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 23);
             this.label6.TabIndex = 50;
@@ -151,7 +151,7 @@
             this.label2.BackColor = System.Drawing.Color.Gold;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label2.Location = new System.Drawing.Point(442, 358);
+            this.label2.Location = new System.Drawing.Point(534, 349);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 25);
             this.label2.TabIndex = 48;
@@ -161,7 +161,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(573, 294);
+            this.label1.Location = new System.Drawing.Point(665, 289);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 25);
             this.label1.TabIndex = 47;
@@ -170,7 +170,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Gold;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(303, 186);
+            this.button3.Location = new System.Drawing.Point(395, 183);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(383, 236);
@@ -184,10 +184,10 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button10.Location = new System.Drawing.Point(303, 446);
+            this.button10.Location = new System.Drawing.Point(435, 441);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(260, 159);
+            this.button10.Size = new System.Drawing.Size(260, 165);
             this.button10.TabIndex = 43;
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -197,7 +197,7 @@
             this.button8.BackColor = System.Drawing.Color.Gold;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(933, 188);
+            this.button8.Location = new System.Drawing.Point(1025, 183);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(195, 236);
@@ -209,7 +209,7 @@
             this.button4.BackColor = System.Drawing.Color.Gold;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(727, 188);
+            this.button4.Location = new System.Drawing.Point(819, 183);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(185, 236);
@@ -219,7 +219,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(665, 284);
+            this.button1.Location = new System.Drawing.Point(757, 279);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(0, 0);
@@ -231,7 +231,7 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Gold;
             this.pictureBox8.Image = global::WindowsFormsApp3.Properties.Resources.control_7184146;
-            this.pictureBox8.Location = new System.Drawing.Point(745, 210);
+            this.pictureBox8.Location = new System.Drawing.Point(837, 205);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(152, 158);
@@ -244,10 +244,10 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Gold;
             this.pictureBox5.Image = global::WindowsFormsApp3.Properties.Resources.accept;
-            this.pictureBox5.Location = new System.Drawing.Point(665, 455);
+            this.pictureBox5.Location = new System.Drawing.Point(792, 450);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(125, 103);
+            this.pictureBox5.Size = new System.Drawing.Size(125, 109);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 56;
             this.pictureBox5.TabStop = false;
@@ -257,10 +257,10 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Gold;
             this.pictureBox4.Image = global::WindowsFormsApp3.Properties.Resources.revenue;
-            this.pictureBox4.Location = new System.Drawing.Point(356, 455);
+            this.pictureBox4.Location = new System.Drawing.Point(488, 450);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(157, 103);
+            this.pictureBox4.Size = new System.Drawing.Size(157, 109);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 54;
             this.pictureBox4.TabStop = false;
@@ -269,7 +269,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Gold;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(955, 209);
+            this.pictureBox3.Location = new System.Drawing.Point(1047, 204);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(152, 159);
@@ -282,10 +282,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gold;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(390, 185);
+            this.pictureBox1.Location = new System.Drawing.Point(477, 209);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(211, 171);
+            this.pictureBox1.Size = new System.Drawing.Size(218, 138);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
@@ -295,10 +295,10 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Gold;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(104, 194);
+            this.pictureBox9.Location = new System.Drawing.Point(196, 205);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(160, 174);
+            this.pictureBox9.Size = new System.Drawing.Size(160, 158);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 68;
             this.pictureBox9.TabStop = false;
@@ -310,7 +310,7 @@
             this.label11.BackColor = System.Drawing.Color.Gold;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label11.Location = new System.Drawing.Point(133, 383);
+            this.label11.Location = new System.Drawing.Point(225, 378);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 23);
             this.label11.TabIndex = 67;
@@ -321,7 +321,7 @@
             this.button11.BackColor = System.Drawing.Color.Gold;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(95, 186);
+            this.button11.Location = new System.Drawing.Point(187, 183);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(181, 236);
@@ -333,10 +333,10 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Gold;
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(115, 478);
+            this.pictureBox10.Location = new System.Drawing.Point(246, 473);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(109, 81);
+            this.pictureBox10.Size = new System.Drawing.Size(109, 87);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 71;
             this.pictureBox10.TabStop = false;
@@ -346,11 +346,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Gold;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label12.Location = new System.Drawing.Point(75, 572);
+            this.label12.Location = new System.Drawing.Point(202, 573);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(190, 23);
+            this.label12.Size = new System.Drawing.Size(166, 19);
             this.label12.TabIndex = 70;
             this.label12.Text = "Danh sách người thuê";
             this.label12.Click += new System.EventHandler(this.label12_Click);
@@ -361,10 +361,10 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button12.Location = new System.Drawing.Point(56, 446);
+            this.button12.Location = new System.Drawing.Point(187, 441);
             this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(225, 159);
+            this.button12.Size = new System.Drawing.Size(225, 165);
             this.button12.TabIndex = 69;
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
@@ -375,7 +375,7 @@
             this.label5.BackColor = System.Drawing.Color.Gold;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(929, 572);
+            this.label5.Location = new System.Drawing.Point(1039, 570);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 23);
             this.label5.TabIndex = 76;
@@ -387,7 +387,7 @@
             this.button2.BackColor = System.Drawing.Color.Gold;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(881, 443);
+            this.button2.Location = new System.Drawing.Point(991, 441);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(229, 165);
             this.button2.TabIndex = 75;
@@ -398,7 +398,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Gold;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(890, 452);
+            this.pictureBox2.Location = new System.Drawing.Point(1000, 450);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(208, 103);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

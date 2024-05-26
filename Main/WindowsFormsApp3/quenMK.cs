@@ -16,6 +16,10 @@ namespace WindowsFormsApp3
 {
     public partial class quenMK : System.Windows.Forms.Form
     {
+        private int soLanThu = 0;
+        private const int soLanThuToiDa = 5;
+        private DateTime? thoiGianKhoa = null;
+        private const int thoiGianChoPhut = 10;
         public quenMK()
         {
             InitializeComponent();
@@ -87,8 +91,9 @@ namespace WindowsFormsApp3
 
         private void label4_Click(object sender, EventArgs e)
         {
-            this.Close();
-            CloseAllForms();
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
         }
 
         
@@ -128,20 +133,34 @@ namespace WindowsFormsApp3
         public void check2()
         {
 
+            if (thoiGianKhoa.HasValue)
+            {
+                TimeSpan thoiGianDaQua = DateTime.Now - thoiGianKhoa.Value;
+                if (thoiGianDaQua.TotalMinutes < thoiGianChoPhut)
+                {
+                    MessageBox.Show(this, $"Bạn đã nhập sai thông tin quá {soLanThuToiDa} lần. Vui lòng thử lại sau {thoiGianChoPhut - thoiGianDaQua.TotalMinutes:F0} phút.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    soLanThu = 0;
+                    thoiGianKhoa = null;
+                }
+            }
+
             ClassConnect c = new ClassConnect();
-            if(textBox1.Text == "example@gmail.com" && textBox4.Text == "Số điện thoại") 
+
+            if (textBox1.Text == "example@gmail.com" && textBox4.Text == "Số điện thoại")
             {
                 MessageBox.Show(this, "Vui lòng nhập Email và số điện thoại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if(textBox1.Text == "example@gmail.com")
+            else if (textBox1.Text == "example@gmail.com")
             {
                 MessageBox.Show(this, "Vui lòng nhập Email.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
             else if (textBox4.Text == "Số điện thoại")
             {
                 MessageBox.Show(this, "Vui lòng nhập số điện thoại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
             else if (!isEmail(textBox1.Text))
             {
@@ -153,49 +172,69 @@ namespace WindowsFormsApp3
             }
             else
             {
-                SqlConnection con = new SqlConnection(c.SqlConect());
-                con.Open();
-                String sql1 = @"
-                SELECT SoDienThoai, Email FROM Nguoi_thue WHERE SoDienThoai = @SoDienThoai AND Email = @Email
-                UNION
-                SELECT SoDienThoai, Email FROM Quan_li WHERE SoDienThoai = @SoDienThoai AND Email = @Email
-                UNION
-                SELECT SoDienThoai, Email FROM Chu_ho WHERE SoDienThoai = @SoDienThoai AND Email = @Email";
-                SqlCommand cmd = new SqlCommand(sql1, con);
-                cmd.Parameters.AddWithValue("@SoDienThoai", textBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@Email", textBox1.Text.Trim());
-                SqlDataReader rdr1 = cmd.ExecuteReader();
-                if (!rdr1.Read())
+                try
                 {
-                    MessageBox.Show(this, "Số điện thoại hoặc Email của bạn chưa được đăng ký.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    rdr1.Close();
-                }
-                else
-                {
-                    Random r = new Random();
-                    int code = r.Next(1000, 10000);
-                    MailMessage mail = new MailMessage();
-                    mail.From = new MailAddress("thuanminh1390@gmail.com");
-                    mail.To.Add(textBox1.Text.Trim());
-                    mail.Subject = "Mã Xác Nhận";
-                    mail.Body = Convert.ToString(code);
+                    using (SqlConnection con = new SqlConnection(c.SqlConect()))
+                    {
+                        con.Open();
+                        String sql1 = @"
+                    SELECT SoDienThoai, Email FROM Nguoi_thue WHERE SoDienThoai = @SoDienThoai AND Email = @Email
+                    UNION
+                    SELECT SoDienThoai, Email FROM Quan_li WHERE SoDienThoai = @SoDienThoai AND Email = @Email
+                    UNION
+                    SELECT SoDienThoai, Email FROM Chu_ho WHERE SoDienThoai = @SoDienThoai AND Email = @Email";
+                        SqlCommand cmd = new SqlCommand(sql1, con);
+                        cmd.Parameters.AddWithValue("@SoDienThoai", textBox4.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Email", textBox1.Text.Trim());
+                        SqlDataReader rdr1 = cmd.ExecuteReader();
+                        if (!rdr1.Read())
+                        {
+                            soLanThu++;
+                            if (soLanThu >= soLanThuToiDa)
+                            {
+                                thoiGianKhoa = DateTime.Now;
+                                MessageBox.Show(this, "Bạn đã nhập sai thông tin quá 5 lần. Vui lòng thử lại sau 10 phút.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                VoHieuHoaNhap();
+                                return;
+                            }
+                            else
+                            {
+                                MessageBox.Show(this, $"Số điện thoại hoặc Email của bạn chưa được đăng ký. Bạn còn {soLanThuToiDa - soLanThu} lần thử.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            rdr1.Close();
+                        }
+                        else
+                        {
+                            Random r = new Random();
+                            int code = r.Next(1000, 10000);
+                            MailMessage mail = new MailMessage();
+                            mail.From = new MailAddress("thuanminh1390@gmail.com");
+                            mail.To.Add(textBox1.Text.Trim());
+                            mail.Subject = "Mã Xác Nhận";
+                            mail.Body = Convert.ToString(code);
 
-                    SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
-                    smtpClient.Port = 587;
-                    smtpClient.Credentials = new NetworkCredential("thuanminh1390@gmail.com", "efrn boew pxah cwhh");
-                    smtpClient.EnableSsl = true;
-                    try
-                    {
-                        smtpClient.Send(mail);
-                        MessageBox.Show(this, "Đã gửi mã xác nhận về email của bạn, vui lòng nhập mã xác nhận để đổi mật khẩu", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide();
-                        checkCode ck = new checkCode(code, textBox4.Text, textBox1.Text);
-                        ck.ShowDialog();
+                            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
+                            smtpClient.Port = 587;
+                            smtpClient.Credentials = new NetworkCredential("thuanminh1390@gmail.com", "efrn boew pxah cwhh");
+                            smtpClient.EnableSsl = true;
+                            try
+                            {
+                                smtpClient.Send(mail);
+                                MessageBox.Show(this, "Đã gửi mã xác nhận về email của bạn, vui lòng nhập mã xác nhận để đổi mật khẩu", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Hide();
+                                checkCode ck = new checkCode(code, textBox4.Text, textBox1.Text);
+                                ck.ShowDialog();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error: " + ex.Message);
+                            }
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -208,6 +247,12 @@ namespace WindowsFormsApp3
         private void quenMK_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void VoHieuHoaNhap()
+        {
+            textBox1.Enabled = false;
+            textBox4.Enabled = false;
         }
 
         private void textBox4_Enter(object sender, EventArgs e)

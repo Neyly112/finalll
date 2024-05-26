@@ -34,11 +34,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tbMkCu = new WindowsFormsApp3.UI.UserControlBTN();
-            this.tbMkMoi = new WindowsFormsApp3.UI.UserControlBTN();
-            this.tbXacNhan = new WindowsFormsApp3.UI.UserControlBTN();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.tbXacNhan = new WindowsFormsApp3.UI.UserControlBTN();
+            this.tbMkMoi = new WindowsFormsApp3.UI.UserControlBTN();
+            this.tbMkCu = new WindowsFormsApp3.UI.UserControlBTN();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -117,6 +125,101 @@
             this.pictureBox2.TabIndex = 94;
             this.pictureBox2.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(49, 327);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(270, 37);
+            this.label4.TabIndex = 98;
+            this.label4.Text = "Xác nhận mật khẩu";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::WindowsFormsApp3.Properties.Resources.mat1;
+            this.pictureBox6.Location = new System.Drawing.Point(675, 236);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(33, 37);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 117;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::WindowsFormsApp3.Properties.Resources.mat2;
+            this.pictureBox5.Location = new System.Drawing.Point(675, 236);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(33, 37);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 116;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp3.Properties.Resources.mat1;
+            this.pictureBox1.Location = new System.Drawing.Point(675, 323);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 119;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::WindowsFormsApp3.Properties.Resources.mat2;
+            this.pictureBox3.Location = new System.Drawing.Point(675, 323);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 37);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 118;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // tbXacNhan
+            // 
+            this.tbXacNhan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbXacNhan.BackColor = System.Drawing.SystemColors.Window;
+            this.tbXacNhan.BorderColor = System.Drawing.Color.DarkKhaki;
+            this.tbXacNhan.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.tbXacNhan.BorderSize = 5;
+            this.tbXacNhan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbXacNhan.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbXacNhan.Location = new System.Drawing.Point(359, 323);
+            this.tbXacNhan.Margin = new System.Windows.Forms.Padding(4);
+            this.tbXacNhan.Multiline = false;
+            this.tbXacNhan.Name = "tbXacNhan";
+            this.tbXacNhan.Padding = new System.Windows.Forms.Padding(7);
+            this.tbXacNhan.PasswordChar = true;
+            this.tbXacNhan.Size = new System.Drawing.Size(349, 41);
+            this.tbXacNhan.TabIndex = 99;
+            this.tbXacNhan.Texts = "";
+            this.tbXacNhan.UnderlinedStyle = true;
+            // 
+            // tbMkMoi
+            // 
+            this.tbMkMoi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbMkMoi.BackColor = System.Drawing.SystemColors.Window;
+            this.tbMkMoi.BorderColor = System.Drawing.Color.DarkKhaki;
+            this.tbMkMoi.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.tbMkMoi.BorderSize = 5;
+            this.tbMkMoi.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbMkMoi.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbMkMoi.Location = new System.Drawing.Point(359, 236);
+            this.tbMkMoi.Margin = new System.Windows.Forms.Padding(4);
+            this.tbMkMoi.Multiline = false;
+            this.tbMkMoi.Name = "tbMkMoi";
+            this.tbMkMoi.Padding = new System.Windows.Forms.Padding(7);
+            this.tbMkMoi.PasswordChar = true;
+            this.tbMkMoi.Size = new System.Drawing.Size(349, 41);
+            this.tbMkMoi.TabIndex = 97;
+            this.tbMkMoi.Texts = "";
+            this.tbMkMoi.UnderlinedStyle = true;
+            // 
             // tbMkCu
             // 
             this.tbMkCu.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -137,63 +240,16 @@
             this.tbMkCu.Texts = "";
             this.tbMkCu.UnderlinedStyle = true;
             // 
-            // tbMkMoi
-            // 
-            this.tbMkMoi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbMkMoi.BackColor = System.Drawing.SystemColors.Window;
-            this.tbMkMoi.BorderColor = System.Drawing.Color.DarkKhaki;
-            this.tbMkMoi.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbMkMoi.BorderSize = 5;
-            this.tbMkMoi.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbMkMoi.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbMkMoi.Location = new System.Drawing.Point(359, 236);
-            this.tbMkMoi.Margin = new System.Windows.Forms.Padding(4);
-            this.tbMkMoi.Multiline = false;
-            this.tbMkMoi.Name = "tbMkMoi";
-            this.tbMkMoi.Padding = new System.Windows.Forms.Padding(7);
-            this.tbMkMoi.PasswordChar = false;
-            this.tbMkMoi.Size = new System.Drawing.Size(349, 41);
-            this.tbMkMoi.TabIndex = 97;
-            this.tbMkMoi.Texts = "";
-            this.tbMkMoi.UnderlinedStyle = true;
-            // 
-            // tbXacNhan
-            // 
-            this.tbXacNhan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbXacNhan.BackColor = System.Drawing.SystemColors.Window;
-            this.tbXacNhan.BorderColor = System.Drawing.Color.DarkKhaki;
-            this.tbXacNhan.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbXacNhan.BorderSize = 5;
-            this.tbXacNhan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbXacNhan.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbXacNhan.Location = new System.Drawing.Point(359, 323);
-            this.tbXacNhan.Margin = new System.Windows.Forms.Padding(4);
-            this.tbXacNhan.Multiline = false;
-            this.tbXacNhan.Name = "tbXacNhan";
-            this.tbXacNhan.Padding = new System.Windows.Forms.Padding(7);
-            this.tbXacNhan.PasswordChar = false;
-            this.tbXacNhan.Size = new System.Drawing.Size(349, 41);
-            this.tbXacNhan.TabIndex = 99;
-            this.tbXacNhan.Texts = "";
-            this.tbXacNhan.UnderlinedStyle = true;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(49, 327);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(270, 37);
-            this.label4.TabIndex = 98;
-            this.label4.Text = "Xác nhận mật khẩu";
-            // 
             // FormDMKCH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(807, 485);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.tbXacNhan);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbMkMoi);
@@ -210,6 +266,10 @@
             this.Text = "FormDMKQL";
             this.Load += new System.EventHandler(this.FormDMKCH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +286,9 @@
         private UI.UserControlBTN tbMkMoi;
         private UI.UserControlBTN tbXacNhan;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
