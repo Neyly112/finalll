@@ -165,7 +165,7 @@ namespace WindowsFormsApp3
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            FormDanhSachHoaChuHo ds = new FormDanhSachHoaChuHo();
+            FormDanhSachHoaChuHo ds = new FormDanhSachHoaChuHo(ma);
             this.Hide();
             ds.ShowDialog();
         }

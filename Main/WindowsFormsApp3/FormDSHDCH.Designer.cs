@@ -32,6 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +73,8 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ChiTiet});
             this.dataGridView1.Location = new System.Drawing.Point(26, 155);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -92,6 +95,15 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 94;
             this.pictureBox2.TabStop = false;
+            // 
+            // ChiTiet
+            // 
+            this.ChiTiet.HeaderText = "ChiTiet";
+            this.ChiTiet.MinimumWidth = 6;
+            this.ChiTiet.Name = "ChiTiet";
+            this.ChiTiet.ReadOnly = true;
+            this.ChiTiet.Text = "Chi Tiết";
+            this.ChiTiet.UseColumnTextForButtonValue = true;
             // 
             // FormDSHDCH
             // 
@@ -121,5 +133,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewButtonColumn ChiTiet;
     }
 }
