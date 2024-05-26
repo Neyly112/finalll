@@ -86,3 +86,14 @@ E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
 E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CopyComplete
 E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.dll
 E:\Finall5\finalll\Main\BLL1\obj\Debug\BLL1.pdb
+D:\Bai Tap\Cuu2\finalll\Main\BLL1\bin\Debug\BLL1.dll
+D:\Bai Tap\Cuu2\finalll\Main\BLL1\bin\Debug\BLL1.pdb
+D:\Bai Tap\Cuu2\finalll\Main\BLL1\bin\Debug\DAO1.dll
+D:\Bai Tap\Cuu2\finalll\Main\BLL1\bin\Debug\DTO1.dll
+D:\Bai Tap\Cuu2\finalll\Main\BLL1\bin\Debug\DAO1.pdb
+D:\Bai Tap\Cuu2\finalll\Main\BLL1\bin\Debug\DTO1.pdb
+D:\Bai Tap\Cuu2\finalll\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+D:\Bai Tap\Cuu2\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+D:\Bai Tap\Cuu2\finalll\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
+D:\Bai Tap\Cuu2\finalll\Main\BLL1\obj\Debug\BLL1.dll
+D:\Bai Tap\Cuu2\finalll\Main\BLL1\obj\Debug\BLL1.pdb
