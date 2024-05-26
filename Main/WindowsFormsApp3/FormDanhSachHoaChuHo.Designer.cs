@@ -82,6 +82,7 @@
             this.dshd.RowHeadersWidth = 51;
             this.dshd.Size = new System.Drawing.Size(926, 324);
             this.dshd.TabIndex = 15;
+            this.dshd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dshd_CellContentClick);
             // 
             // pictureBox2
             // 

@@ -66,7 +66,7 @@ namespace WindowsFormsApp3
         string getThang()
         {
             string thang = "";
-            string query = "SELECT TOP 1 Month(NgayLapHoaDon) as thang FROM Hoa_don ORDER BY NgayLapHoaDon DESC";
+            string query = "SELECT TOP 1 Month(TuNgay) as thang FROM Hoa_don ORDER BY TuNgay DESC";
             using (SqlConnection conn = new SqlConnection(c.SqlConect()))
             {
                 conn.Open();

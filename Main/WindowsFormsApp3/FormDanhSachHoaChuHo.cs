@@ -13,10 +13,12 @@ namespace WindowsFormsApp3
 {
     public partial class FormDanhSachHoaChuHo : Form
     {
-        public FormDanhSachHoaChuHo()
+        string ma;
+        public FormDanhSachHoaChuHo(string ma)
         {
             InitializeComponent();
             ds();
+            this.ma = ma;
         }
 
         public void ds()
@@ -56,7 +58,7 @@ namespace WindowsFormsApp3
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            trangchu3 t = new trangchu3("");
+            trangchu3 t = new trangchu3(ma);
             t.ShowDialog();
         }
 
@@ -65,6 +67,11 @@ namespace WindowsFormsApp3
             label1.BackColor = System.Drawing.Color.Transparent;
           
             pictureBox2.BackColor = System.Drawing.Color.Transparent;
+        }
+
+        private void dshd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 }
