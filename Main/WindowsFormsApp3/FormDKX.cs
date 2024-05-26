@@ -116,7 +116,7 @@ namespace WindowsFormsApp3
             string bien_so = bienSoXe.Text;
             if (!check_bien_so(bien_so))
             {
-                MessageBox.Show("Biển số xe không hợp lệ hoặc biển số xe đã tồn tại.", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Biển số xe đã tồn tại, hoặc biển số xe không hợp lệ. Biến số xe gồm có 4 hoặc 5 ký tự số ", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -215,7 +215,7 @@ namespace WindowsFormsApp3
             string bien_so = bienSoXe.Text;
             if (!check_bien_so(bien_so))
             {
-                MessageBox.Show("Biển số xe không hợp lệ hoặc biển số xe đã tồn tại.", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Biển số xe đã tồn tại, hoặc biển số xe không hợp lệ. Biến số xe hợp lệ gồm có 4 hoặc 5 ký tự số.", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

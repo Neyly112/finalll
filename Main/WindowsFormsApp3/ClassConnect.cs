@@ -11,7 +11,6 @@ namespace WindowsFormsApp3
         string sqlConect;
         public ClassConnect()
         {
-            this.sqlConect = @"Data Source=TANNHA\TANNHA;Initial Catalog=QLCH2;Integrated Security=True;";
         }
         public string SqlConect()
         {
