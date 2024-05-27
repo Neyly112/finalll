@@ -269,6 +269,38 @@ namespace WindowsFormsApp3
                 kq = 1;
             }
             reader.Close();
+            sql.Close();
+
+            if (kq == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private bool checkSDT(string sdt)
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "select SoDienThoai from Nguoi_thue where SoDienThoai = '" + sdt + "'";
+            sqlCm.Connection = sql;
+            SqlDataReader reader = sqlCm.ExecuteReader();
+            int kq = 0;
+            while (reader.Read())
+            {
+                kq = 1;
+            }
+            reader.Close();
             if (kq == 0)
             {
                 return false;
@@ -419,6 +451,11 @@ namespace WindowsFormsApp3
             {
                 e.Handled = true;
             }
+        }
+
+        private void tbSNG_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

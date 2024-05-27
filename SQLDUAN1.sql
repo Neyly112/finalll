@@ -568,4 +568,5 @@ select * from Tin_nhan
 select * from Thong_ke
 select * from Phong_thue_so_huu
 select * from Hoa_don
+select * from Hop_dong
 select SoDienThoai

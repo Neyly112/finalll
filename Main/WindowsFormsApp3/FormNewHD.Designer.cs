@@ -240,6 +240,7 @@
             this.tbSNG.Name = "tbSNG";
             this.tbSNG.Size = new System.Drawing.Size(612, 38);
             this.tbSNG.TabIndex = 51;
+            this.tbSNG.TextChanged += new System.EventHandler(this.tbSNG_TextChanged);
             this.tbSNG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSNG_KeyPress);
             // 
             // tbEmail
