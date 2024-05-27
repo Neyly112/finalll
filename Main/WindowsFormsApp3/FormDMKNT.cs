@@ -209,8 +209,8 @@ namespace WindowsFormsApp3
         {
             if (!tbXacNhan.PasswordChar)
             {
-                pictureBox5.BringToFront();
-                tbMkMoi.PasswordChar = true;
+                pictureBox4.BringToFront();
+                tbXacNhan.PasswordChar = true;
             }
         }
 
@@ -218,8 +218,26 @@ namespace WindowsFormsApp3
         {
             if (tbXacNhan.PasswordChar)
             {
-                pictureBox4.BringToFront();
+                pictureBox5.BringToFront();
                 tbXacNhan.PasswordChar = false;
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (tbMkCu.PasswordChar)
+            {
+                pictureBox7.BringToFront();
+                tbMkCu.PasswordChar = false;
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            if (!tbMkCu.PasswordChar)
+            {
+                pictureBox6.BringToFront();
+                tbMkCu.PasswordChar = true;
             }
         }
     }

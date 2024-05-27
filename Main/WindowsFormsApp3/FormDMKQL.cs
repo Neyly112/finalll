@@ -222,5 +222,23 @@ namespace WindowsFormsApp3
                 tbXacNhan.PasswordChar = false;
             }
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (tbMkCu.PasswordChar)
+            {
+                pictureBox7.BringToFront();
+                tbMkCu.PasswordChar = false;
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            if (!tbMkCu.PasswordChar)
+            {
+                pictureBox6.BringToFront();
+                tbMkCu.PasswordChar = true;
+            }
+        }
     }
 }
