@@ -24,7 +24,7 @@ namespace WindowsFormsApp3
         bool checkPhongThue1 = false;
         bool checkPhong1 = false;
         string emailCH;
-
+        string tenTrung;
         public FormNewHD(string ma)
         {
             InitializeComponent();
@@ -105,8 +105,8 @@ namespace WindowsFormsApp3
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            NguoiThue n = new NguoiThue(txTen.Text.Trim(), tbDC.Text.Trim(), tbEmail.Text.Trim(), tbSDT.Text.Trim(),  "1", "1");
+
+            NguoiThue n = new NguoiThue(txTen.Text.Trim(), tbDC.Text.Trim(), tbEmail.Text.Trim(), tbSDT.Text.Trim(), "1", "1");
 
 
             if ((tbDC.Text.Trim() == "") || (tbEmail.Text.Trim() == "") || (tbSDT.Text.Trim() == "") || (tbSNG.Text.Trim() == "") || (txTen.Text.Trim() == ""))
@@ -119,38 +119,117 @@ namespace WindowsFormsApp3
                 MessageBox.Show("Số điện thoại không phù hợp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (checkSDT(tbSDT.Text.Trim()) == true)
-            {
-                MessageBox.Show("Số điện thoại bị trùng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (isEmail(tbEmail.Text.Trim()) == false)
-            {
-                MessageBox.Show("Nhập sai email.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (Convert.ToInt32(tbSNG.Text.Trim()) <= 0)
-            {
-                MessageBox.Show("Sai số người.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            
-            
-            
 
-            string tmp = DateTime.Now.ToString("yyyy-MM-dd");
-            if (dateTimePickerNL.Value.ToString("yyyy-MM-dd") != tmp)
+            if ((checkDiaChi(tbDC.Text.Trim()) == true) && (checkSDT(tbSDT.Text.Trim()) == true) && (checkTen(txTen.Text.Trim()) == true))
             {
-                MessageBox.Show("Ngày lập phải là hôm nay.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (MessageBox.Show("Khách hàng này đang thuê một phòng. Bạn có muốn lập thêm hợp đồng của khách hàng này với một phòng khác không?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+
+                    if (isEmail(tbEmail.Text.Trim()) == false)
+                    {
+                        MessageBox.Show("Nhập sai email.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (Convert.ToInt32(tbSNG.Text.Trim()) <= 0)
+                    {
+                        MessageBox.Show("Sai số người.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    string tmp1 = DateTime.Now.ToString("yyyy-MM-dd");
+                    if (dateTimePickerNL.Value.ToString("yyyy-MM-dd") != tmp1)
+                    {
+                        MessageBox.Show("Ngày lập phải là hôm nay.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (dateTimePickerNKT.Value.ToString() == dateTimePickerNL.Value.ToString())
+                    {
+                        MessageBox.Show("Trùng ngày lập và kết thúc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    HopDong h1 = new HopDong(dateTimePickerNL.Text.ToString(), Convert.ToInt32(tbSNG.Text.Trim()), dateTimePickerNKT.Text.ToString(), comboBox1.Text.Trim());
+                    getTenTRung(txTen.Text.Trim());
+
+                    runN(h1, n, tenTrung);
+                }
             }
-            if (dateTimePickerNKT.Value.ToString() == dateTimePickerNL.Value.ToString())
+            else
             {
-                MessageBox.Show("Trùng ngày lập và kết thúc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+
+                if (checkSDT(tbSDT.Text.Trim()) == true)
+                {
+                    MessageBox.Show("Số điện thoại bị trùng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (isEmail(tbEmail.Text.Trim()) == false)
+                {
+                    MessageBox.Show("Nhập sai email.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (Convert.ToInt32(tbSNG.Text.Trim()) <= 0)
+                {
+                    MessageBox.Show("Sai số người.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+
+
+                string tmp = DateTime.Now.ToString("yyyy-MM-dd");
+                if (dateTimePickerNL.Value.ToString("yyyy-MM-dd") != tmp)
+                {
+                    MessageBox.Show("Ngày lập phải là hôm nay.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (dateTimePickerNKT.Value.ToString() == dateTimePickerNL.Value.ToString())
+                {
+                    MessageBox.Show("Trùng ngày lập và kết thúc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                HopDong h = new HopDong(dateTimePickerNL.Text.ToString(), Convert.ToInt32(tbSNG.Text.Trim()), dateTimePickerNKT.Text.ToString(), comboBox1.Text.Trim());
+                runC(h, n);
             }
-            
-            HopDong h = new HopDong(dateTimePickerNL.Text.ToString(), Convert.ToInt32(tbSNG.Text.Trim()), dateTimePickerNKT.Text.ToString(), comboBox1.Text.Trim());
+
+        }
+        private void runN(HopDong h, NguoiThue n, string trung)
+        {
+
+            funcAddHD(h.getNgayKetThuc().Trim(), Convert.ToInt32(h.getSoNguoi()), h.getNgayLap().Trim(), h.getTenPhong());
+
+
+            funcInsertPhongThueSH1(comboBox1.Text.Trim().ToString());
+
+            getMailCH();
+
+            MailMessage mail = new MailMessage();
+            MailAddress to = new MailAddress(emailCH);
+
+            mail.From = new MailAddress("thuanminh1390@gmail.com");
+            mail.To.Add(to);
+            mail.Subject = "Hợp đồng mới";
+            mail.Body = "Có hợp đồng mới cần xác nhận";
+
+
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
+            smtpClient.Port = 587;
+            smtpClient.Credentials = new NetworkCredential("thuanminh1390@gmail.com", "efrn boew pxah cwhh");
+            smtpClient.EnableSsl = true;
+            try
+            {
+                smtpClient.Send(mail);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            this.Hide();
+            FormDanhSachHopDong f = new FormDanhSachHopDong(ma);
+            f.ShowDialog();
+        }
+        private void getTenTRung(string ten)
+        {
             if (sql == null)
             {
                 sql = new SqlConnection(strSql);
@@ -159,15 +238,31 @@ namespace WindowsFormsApp3
             {
                 sql.Open();
             }
-            
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "select MaNguoiThue from Nguoi_thue where Ten = '" + ten + "'";
+            sqlCm.Connection = sql;
+            SqlDataReader reader = sqlCm.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string tmp = reader.GetString(0);
+                tenTrung = tmp;
+            }
+            reader.Close();
+            sql.Close();
+        }
+        private void runC(HopDong h, NguoiThue n)
+        {
+
             funcAddKH(n.getEmail().Trim(), n.getDiaChi().Trim(), n.getSdt().Trim(), n.getTen().Trim());
             funcAddHD(h.getNgayKetThuc().Trim(), Convert.ToInt32(h.getSoNguoi()), h.getNgayLap().Trim(), h.getTenPhong());
             funcInsertPhongThueSH(h.getTenPhong());
             getMailCH();
-            
+
             MailMessage mail = new MailMessage();
             MailAddress to = new MailAddress(emailCH);
-            
+
             mail.From = new MailAddress("thuanminh1390@gmail.com");
             mail.To.Add(to);
             mail.Subject = "Hợp đồng mới";
@@ -247,7 +342,84 @@ namespace WindowsFormsApp3
             }
             sql.Close();
         }
+        private bool checkTen(string ten)
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "select Ten from Nguoi_thue where Ten = '" + ten + "'";
+            sqlCm.Connection = sql;
+            SqlDataReader reader = sqlCm.ExecuteReader();
+            int kq = 0;
+            while (reader.Read())
+            {
+                kq = 1;
+            }
+            reader.Close();
+            if (kq == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private bool checkDiaChi(string dc)
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "select DiaChi from Nguoi_thue where DiaChi = '" + dc + "'";
+            sqlCm.Connection = sql;
+            SqlDataReader reader = sqlCm.ExecuteReader();
+            int kq = 0;
+            while (reader.Read())
+            {
+                kq = 1;
+            }
+            reader.Close();
+            if (kq == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private void funcInsertPhongThueSH1(string tenPhong)
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
 
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "insert into Phong_thue_so_huu values ('" + tenTrung + "', '" + tenPhong + "')";
+            sqlCm.Connection = sql;
+            sqlCm.ExecuteNonQuery();
+            sql.Close();
+        }
         private bool checkPhong(string maPhong)
         {
             if (sql == null)
@@ -280,36 +452,7 @@ namespace WindowsFormsApp3
                 return true;
             }
         }
-        private bool checkSDT(string sdt)
-        {
-            if (sql == null)
-            {
-                sql = new SqlConnection(strSql);
-            }
-            if (sql.State == ConnectionState.Closed)
-            {
-                sql.Open();
-            }
-            SqlCommand sqlCm = new SqlCommand();
-            sqlCm.CommandType = CommandType.Text;
-            sqlCm.CommandText = "select SoDienThoai from Nguoi_thue where SoDienThoai = '" + sdt + "'";
-            sqlCm.Connection = sql;
-            SqlDataReader reader = sqlCm.ExecuteReader();
-            int kq = 0;
-            while (reader.Read())
-            {
-                kq = 1;
-            }
-            reader.Close();
-            if (kq == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        
         private bool checkPhongDaThue(string maPhong)
         {
             if (sql == null)

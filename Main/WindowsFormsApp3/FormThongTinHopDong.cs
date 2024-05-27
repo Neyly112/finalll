@@ -94,24 +94,34 @@ namespace WindowsFormsApp3
             {
                 sql.Open();
             }
-            
+
             SqlCommand sqlCm = new SqlCommand();
             sqlCm.CommandType = CommandType.Text;
             sqlCm.CommandText = "delete from Hop_dong where MaPhong= '" + tenPhong + "'";
-            
+
             sqlCm.Connection = sql;
             int kq = sqlCm.ExecuteNonQuery();
             if (kq > 0)
             {
                 MessageBox.Show("Đã hủy hợp đồng");
+
             }
             else
             {
                 MessageBox.Show("Hợp đồng không tồn tại");
             }
             sql.Close();
+
             funcDeletePhongThue();
-            deleteNT();
+        
+            int tmp = checkSo();
+            
+            if (tmp != 1)
+            {
+                deleteNT();
+            }
+
+
             this.Hide();
             FormDanhSachHopDong f = new FormDanhSachHopDong(ma);
             f.ShowDialog();
@@ -166,7 +176,30 @@ namespace WindowsFormsApp3
             f.ShowDialog();
 
         }
-
+        private int checkSo()
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "select MaNguoiThue from Hop_dong where MaNguoiThue = '" + maNguoiThue + "'";
+            sqlCm.Connection = sql;
+            SqlDataReader reader = sqlCm.ExecuteReader();
+            int kq = 0;
+            while (reader.Read())
+            {
+                kq++;
+            }
+            reader.Close();
+            sql.Close();
+            return kq;
+        }
         private void deleteNT()
         {
             if (sql == null)

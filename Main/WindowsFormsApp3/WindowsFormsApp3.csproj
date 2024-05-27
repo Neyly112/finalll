@@ -346,6 +346,12 @@
     <Compile Include="FormGiaHanHD.Designer.cs">
       <DependentUpon>FormGiaHanHD.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHDCHUHO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHDCHUHO.Designer.cs">
+      <DependentUpon>FormHDCHUHO.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHDNT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -609,6 +615,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGiaHanHD.resx">
       <DependentUpon>FormGiaHanHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHDCHUHO.resx">
+      <DependentUpon>FormHDCHUHO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHDNT.resx">
       <DependentUpon>FormHDNT.cs</DependentUpon>

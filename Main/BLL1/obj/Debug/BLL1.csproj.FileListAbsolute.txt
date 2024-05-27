@@ -133,3 +133,14 @@ E:\GITHUB_AN\Finall7\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CopyComplete
 E:\GITHUB_AN\Finall7\finalll\Main\BLL1\obj\Debug\BLL1.dll
 E:\GITHUB_AN\Finall7\finalll\Main\BLL1\obj\Debug\BLL1.pdb
 >>>>>>> Stashed changes
+D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\bin\Debug\BLL1.dll
+D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\bin\Debug\BLL1.pdb
+D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\bin\Debug\DAO1.dll
+D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\bin\Debug\DTO1.dll
+D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\bin\Debug\DAO1.pdb
+D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\bin\Debug\DTO1.pdb
+D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
+D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\obj\Debug\BLL1.dll
+D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\obj\Debug\BLL1.pdb
