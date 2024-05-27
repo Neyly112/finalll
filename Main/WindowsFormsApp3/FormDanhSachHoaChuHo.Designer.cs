@@ -32,6 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dshd = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dshd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +76,8 @@
             this.dshd.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dshd.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dshd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dshd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ChiTiet});
             this.dshd.Location = new System.Drawing.Point(46, 162);
             this.dshd.Margin = new System.Windows.Forms.Padding(4);
             this.dshd.Name = "dshd";
@@ -94,6 +97,15 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 86;
             this.pictureBox2.TabStop = false;
+            // 
+            // ChiTiet
+            // 
+            this.ChiTiet.HeaderText = "ChiTiet";
+            this.ChiTiet.MinimumWidth = 6;
+            this.ChiTiet.Name = "ChiTiet";
+            this.ChiTiet.ReadOnly = true;
+            this.ChiTiet.Text = "ChiTiet";
+            this.ChiTiet.UseColumnTextForButtonValue = true;
             // 
             // FormDanhSachHoaChuHo
             // 
@@ -124,5 +136,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dshd;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewButtonColumn ChiTiet;
     }
 }

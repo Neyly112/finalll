@@ -154,6 +154,7 @@
             this.Controls.Add(this.Hoa_Don_Tien_Dien);
             this.MinimumSize = new System.Drawing.Size(1070, 542);
             this.Name = "FormHDCHUHO";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHDCHUHO";
             this.Load += new System.EventHandler(this.FormHDCHUHO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -71,7 +71,15 @@ namespace WindowsFormsApp3
 
         private void dshd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            DataGridViewRow row = new DataGridViewRow();
+            row = dshd.Rows[e.RowIndex];
+            string maHD = Convert.ToString(row.Cells["MaHoaDon"].Value);
+            string maPhong = Convert.ToString(row.Cells["MaPhong"].Value);
+
+            
+            this.Hide();
+            FormHDCHUHO f = new FormHDCHUHO(ma, maHD, maPhong);
+            f.ShowDialog();
         }
     }
 }
