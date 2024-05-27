@@ -22,6 +22,7 @@ using iText.Layout.Properties;
 using iText.IO.Font;
 using System.Xml.Linq;
 using System.Reflection.Emit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp3
 {
@@ -36,6 +37,7 @@ namespace WindowsFormsApp3
             label3.BackColor = System.Drawing.Color.Transparent;
             label4.BackColor = System.Drawing.Color.Transparent;
             label5.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
             LoadDanhSachPhong();
 
         }
@@ -122,5 +124,7 @@ namespace WindowsFormsApp3
                 connection.Close() ;
             }
         }
+
+        
     }
 }

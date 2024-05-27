@@ -128,7 +128,7 @@ namespace WindowsFormsApp3
         string getSoNguoiChuaThanhToan()
         {
             string soNguoiChuaThanhToan = "";
-            string query = "SELECT COUNT(*) as so_nguoi_chua_thanh_toan FROM Hop_dong Where Hop_dong.MaPhong NOT IN ( SELECT MaPhong FROM Hoa_don)";
+            string query = "SELECT COUNT(*) as so_nguoi_chua_thanh_toan FROM Hoa_don WHERE TrangThai = N'Chưa thanh toán';";
             using (SqlConnection conn = new SqlConnection(c.SqlConect()))
             {
                 conn.Open();

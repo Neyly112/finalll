@@ -96,10 +96,8 @@ namespace WindowsFormsApp3
 
         private void button10_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormDSHDCH f = new FormDSHDCH(ma);
-            f.ShowDialog();
-            
+            FormThongKeDoanhThu formThongKeDoanhThu = new FormThongKeDoanhThu();
+            formThongKeDoanhThu.ShowDialog();   
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -194,6 +192,12 @@ namespace WindowsFormsApp3
             this.Hide();
             FormDSXECH f = new FormDSXECH(ma);
             f.ShowDialog();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            FormThongKeDoanhThu formThongKeDoanhThu = new FormThongKeDoanhThu();
+            formThongKeDoanhThu.ShowDialog();
         }
     }
 }

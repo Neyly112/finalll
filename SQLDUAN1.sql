@@ -62,7 +62,11 @@ ADD CONSTRAINT MK_NT DEFAULT '1' FOR MatKhau
 go
 INSERT INTO Nguoi_thue (Ten, DiaChi, Email, SoDienThoai, MatKhau, MaNguoiThue)
 VALUES
-(N'Người thuê 1', N'Địa chỉ 7', 'nguoithue1@example.com', '0123456781', 'password7', 'NT001')
+(N'Người thuê 1', N'Địa chỉ 7', 'nguoithue1@example.com', '0123456781', 'password7', 'NT001'),
+(N'Người thuê 2', N'Địa chỉ 8', 'nguoithue2@example.com', '0123456782', 'password8', 'NT002'),
+(N'Người thuê 3', N'Địa chỉ 9', 'nguoithue3@example.com', '0123456783', 'password9', 'NT003'),
+(N'Người thuê 4', N'Địa chỉ 10', 'nguoithue4@example.com', '0123456784', 'password10', 'NT004'),
+(N'Người thuê 5', N'Địa chỉ 11', 'nguoithue5@example.com', '0123456785', 'password11', 'NT005');
 
 go
 CREATE TABLE Dang_ki_xe
@@ -104,13 +108,14 @@ CREATE TABLE Phong_cho_thue
 go
 INSERT INTO Phong_cho_thue(MaPhong, MoTaPhong, GiaPhong, TrangThaiPhong)
 VALUES
+('P001',N'1 phòng ngủ, 2 máy lạnh, 1 nhà bếp',50000000,N'Đã cho thuê'),
 ('P002',N'1 phòng ngủ, 2 máy lạnh, 1 nhà bếp',50000000,N'Đã cho thuê'),
-('P003',N'3 phòng ngủ, 3 máy lạnh, 1 nhà bếp',250000000,N'Chưa được thuê'),
-('P004',N'2 phòng ngủ, 2 máy lạnh, 1 nhà bếp',15000000,N'Chưa được thuê'),
-('P005',N'3 phòng ngủ, 1 máy lạnh, 1 nhà bếp',18000000,N'Chưa được thuê'),
-('P006',N'1 phòng ngủ, 3 máy lạnh, 1 nhà bếp',22000000,N'Chưa được thuê'),
-('P007',N'2 phòng ngủ, 1 máy lạnh, 1 nhà bếp',20000000,N'Chưa được thuê'),
-('P008',N'4 phòng ngủ, 2 máy lạnh, 1 nhà bếp',25000000,N'Chưa được thuê'),
+('P003',N'3 phòng ngủ, 3 máy lạnh, 1 nhà bếp',250000000,N'Đã cho thuê'),
+('P004',N'2 phòng ngủ, 2 máy lạnh, 1 nhà bếp',15000000,N'Đã cho thuê'),
+('P005',N'3 phòng ngủ, 1 máy lạnh, 1 nhà bếp',18000000,N'Đã cho thuê'),
+('P006',N'1 phòng ngủ, 3 máy lạnh, 1 nhà bếp',22000000,N'Đã cho thuê'),
+('P007',N'2 phòng ngủ, 1 máy lạnh, 1 nhà bếp',20000000,N'Đã cho thuê'),
+('P008',N'4 phòng ngủ, 2 máy lạnh, 1 nhà bếp',25000000,N'Đã cho thuê'),
 ('P009',N'1 phòng ngủ, 1 máy lạnh, 1 nhà bếp',12000000,N'Chưa được thuê'),
 ('P010',N'3 phòng ngủ, 2 máy lạnh, 1 nhà bếp',19000000,N'Chưa được thuê'),
 ('P011',N'2 phòng ngủ, 2 máy lạnh, 1 nhà bếp',17000000,N'Chưa được thuê'),
@@ -127,7 +132,14 @@ CREATE TABLE Phong_thue_so_huu
 go
 INSERT INTO Phong_thue_so_huu (TaiKhoan, MaPhong)
 VALUES 
-('NT001', 'P002')
+('NT001', 'P002'),
+('NT001', 'P006'),
+('NT001', 'P007'),
+('NT002', 'P001'),
+('NT003', 'P003'),
+('NT004', 'P004'),
+('NT005', 'P005'),
+('NT002', 'P008');
 
 go
 
@@ -151,7 +163,8 @@ CREATE TABLE Hop_dong
 go
 INSERT INTO Hop_dong (MaHopDong, NgayBatDau, NgayKetThuc, SoNguoiO, MaPhong, TrangThai, MaChuHo, MaNguoiThue, MaQuanLi)
 VALUES 
-('HD001', '2024-05-14', '2024-06-1', 1, 'P002', N'Chưa xác nhận', 'CH001', 'NT001', 'QL001')
+('HD001', '2024-05-14', '2024-06-1', 1, 'P002', N'Chưa xác nhận', 'CH001', 'NT001', 'QL001');
+
 go
 CREATE TABLE Bang_phi
 (
@@ -171,7 +184,9 @@ CREATE TABLE Bang_phi
 go
 INSERT INTO Bang_phi (TienNuoc, PhiSinhHoat, TienDien, TienXeMay, TienXeDap, TienXeDuoi1_5Tan, MaBangPhi, MaChuHo, MaQuanLi) 
 VALUES 
-(50.00, 100.00, 80.00, 20.00, 0.00, 50.00, 'BP001', 'CH001', 'QL001')
+(50.00, 100.00, 80.00, 20.00, 0.00, 50.00, 'BP001', 'CH001', 'QL001'),
+(60.00, 110.00, 80.00, 20.00, 0.00, 40.00, 'BP002', 'CH001', 'QL001'),
+(50.00, 100.00, 70.00, 10.00, 0.00, 50.00, 'BP003', 'CH001', 'QL001');
 
 
 
@@ -193,7 +208,15 @@ CREATE TABLE Hoa_don
 go
 INSERT INTO Hoa_don (MaHoaDon, TuNgay, DenNgay, MaPhong, MaBangPhi, TongTien, TrangThai) 
 VALUES 
-('HD001', '2024-05-21', '2024-05-30', 'P002', 'BP001', 220000000, N'Chưa thanh toán')
+('HD001', '2024-05-21', '2024-05-30', 'P001', 'BP001', 120000000, N'Thanh toán'),
+('HD002', '2024-05-21', '2024-05-30', 'P002', 'BP002', 225000000, N'Thanh toán'),
+('HD003', '2024-05-21', '2024-05-30', 'P003', 'BP001', 178900000, N'Chưa thanh toán'),
+('HD004', '2024-05-21', '2024-05-30', 'P004', 'BP002', 212345000, N'Chưa thanh toán'),
+('HD005', '2024-05-21', '2024-05-30', 'P005', 'BP002', 223256000, N'Chưa thanh toán'),
+('HD006', '2024-05-21', '2024-05-30', 'P006', 'BP001', 122334500, N'Chưa thanh toán'),
+('HD007', '2024-05-21', '2024-05-30', 'P007', 'BP003', 123120000, N'Chưa thanh toán'),
+('HD008', '2024-05-21', '2024-05-30', 'P008', 'BP001', 785987000, N'Chưa thanh toán');
+
 go
 CREATE TABLE Dien
 (
