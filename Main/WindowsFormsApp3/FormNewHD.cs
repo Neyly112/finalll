@@ -173,7 +173,7 @@ namespace WindowsFormsApp3
                     }
                     HopDong h1 = new HopDong(dateTimePickerNL.Text.ToString(), Convert.ToInt32(tbSNG.Text.Trim()), dateTimePickerNKT.Text.ToString(), comboBox1.Text.Trim());
                     getTenTRung(txTen.Text.Trim());
-                    MessageBox.Show("ggg");
+                   
                     runN(h1, n, tenTrung);
                 }
             }
@@ -218,14 +218,11 @@ namespace WindowsFormsApp3
         }
         private void runN(HopDong h, NguoiThue n, string trung)
         {
-            MessageBox.Show("gg1g");
+            
             getmaNT();
-            MessageBox.Show(maNt);
             funcAddHD1(h.getNgayKetThuc().Trim(), Convert.ToInt32(h.getSoNguoi()), h.getNgayLap().Trim(), h.getTenPhong());
-            MessageBox.Show("ggg3");
 
             funcInsertPhongThueSH1(comboBox1.Text.Trim());
-            MessageBox.Show("ggg4");
             getMailCH();
 
             MailMessage mail = new MailMessage();
