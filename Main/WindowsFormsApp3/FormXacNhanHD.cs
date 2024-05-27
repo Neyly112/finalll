@@ -65,6 +65,7 @@ namespace WindowsFormsApp3
 
         private void funcGetTenNguoiThue()
         {
+            MessageBox.Show(tenNguoiThue);
             if (sql == null)
             {
                 sql = new SqlConnection(strSql);
@@ -76,14 +77,14 @@ namespace WindowsFormsApp3
 
             SqlCommand sqlCm = new SqlCommand();
             sqlCm.CommandType = CommandType.Text;
-            sqlCm.CommandText = "exec getTenNguoiThue '" + tenPhong + "'";
+            sqlCm.CommandText = "select Ten from Nguoi_thue where MaNguoiThue = '" + maNguoiThue + "'";
             sqlCm.Connection = sql;
             SqlDataReader reader = sqlCm.ExecuteReader();
             while (reader.Read())
             {
                 string tmp = reader.GetString(0);
                 tenNguoiThue = tmp;
-
+                MessageBox.Show(tenNguoiThue);
             }
             reader.Close();
             sql.Close();
@@ -116,6 +117,8 @@ namespace WindowsFormsApp3
         private void button1_Click(object sender, EventArgs e)
         {
             getMailQL();
+           
+            
             MailMessage mail = new MailMessage();
             MailAddress to = new MailAddress(emailQL);
             mail.From = new MailAddress("thuanminh1390@gmail.com");
@@ -140,7 +143,42 @@ namespace WindowsFormsApp3
             FormDSHDCH f = new FormDSHDCH(ma);
             f.ShowDialog();
         }
+        private void deleteNT()
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
 
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "delete from Nguoi_thue where MaNguoiThue = '" + maNguoiThue + "'";
+            sqlCm.Connection = sql;
+            sqlCm.ExecuteNonQuery();
+            sql.Close();
+        }
+        private void deletePhongSoHuu()
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
+
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "delete from Phong_thue_so_huu where MaNguoiThue = '" + maNguoiThue + "'";
+            sqlCm.Connection = sql;
+            sqlCm.ExecuteNonQuery();
+            sql.Close();
+        }
         private void funcUpdateTrangThaiPhong()
         {
             if (sql == null)

@@ -40,9 +40,14 @@ namespace WindowsFormsApp3
         }
         public void showNT()
         {
+
             dataGridView1.DataSource = ClassNTBLL.Instance.GetAllNT();
             dataTable = NT1DAO.Instance.GetAllNT();
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

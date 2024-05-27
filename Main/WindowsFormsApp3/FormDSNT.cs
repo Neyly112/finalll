@@ -34,15 +34,8 @@ namespace WindowsFormsApp3
 
         public void showNT()
         {
+            dataGridView1.DataSource = ClassNTBLL.Instance.GetAllNT();
             dataTable = NT1DAO.Instance.GetAllNT();
-            if (dataTable.Rows.Count == 0)
-            {
-                MessageBox.Show("Chưa có người thuê nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                dataGridView1.DataSource = dataTable;
-            }
         }
 
         private void FormDSNT_Load(object sender, EventArgs e)

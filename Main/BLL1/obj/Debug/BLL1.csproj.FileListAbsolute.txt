@@ -108,3 +108,14 @@ D:\CNPM\QLCH4\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
 D:\CNPM\QLCH4\finalll\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
 D:\CNPM\QLCH4\finalll\Main\BLL1\obj\Debug\BLL1.dll
 D:\CNPM\QLCH4\finalll\Main\BLL1\obj\Debug\BLL1.pdb
+D:\Bai Tap\Cuu2\fnal\finalll\Main\BLL1\bin\Debug\BLL1.dll
+D:\Bai Tap\Cuu2\fnal\finalll\Main\BLL1\bin\Debug\BLL1.pdb
+D:\Bai Tap\Cuu2\fnal\finalll\Main\BLL1\bin\Debug\DAO1.dll
+D:\Bai Tap\Cuu2\fnal\finalll\Main\BLL1\bin\Debug\DTO1.dll
+D:\Bai Tap\Cuu2\fnal\finalll\Main\BLL1\bin\Debug\DAO1.pdb
+D:\Bai Tap\Cuu2\fnal\finalll\Main\BLL1\bin\Debug\DTO1.pdb
+D:\Bai Tap\Cuu2\fnal\finalll\Main\BLL1\obj\Debug\BLL1.csproj.AssemblyReference.cache
+D:\Bai Tap\Cuu2\fnal\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
+D:\Bai Tap\Cuu2\fnal\finalll\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
+D:\Bai Tap\Cuu2\fnal\finalll\Main\BLL1\obj\Debug\BLL1.dll
+D:\Bai Tap\Cuu2\fnal\finalll\Main\BLL1\obj\Debug\BLL1.pdb
