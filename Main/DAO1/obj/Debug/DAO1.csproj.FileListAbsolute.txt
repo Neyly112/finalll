@@ -100,3 +100,12 @@ D:\Bai Tap\Cuu2\fa\finalll\Main\DAO1\obj\Debug\DAO1.csproj.CoreCompileInputs.cac
 D:\Bai Tap\Cuu2\fa\finalll\Main\DAO1\obj\Debug\DAO1.csproj.Up2Date
 D:\Bai Tap\Cuu2\fa\finalll\Main\DAO1\obj\Debug\DAO1.dll
 D:\Bai Tap\Cuu2\fa\finalll\Main\DAO1\obj\Debug\DAO1.pdb
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DAO1\bin\Debug\DAO1.dll
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DAO1\bin\Debug\DAO1.pdb
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DAO1\bin\Debug\DTO1.dll
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DAO1\bin\Debug\DTO1.pdb
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DAO1\obj\Debug\DAO1.csproj.AssemblyReference.cache
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DAO1\obj\Debug\DAO1.csproj.CoreCompileInputs.cache
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DAO1\obj\Debug\DAO1.csproj.Up2Date
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DAO1\obj\Debug\DAO1.dll
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DAO1\obj\Debug\DAO1.pdb

@@ -16,3 +16,9 @@ D:\CNPM\QLCH2\finalll\Main\DTO1\obj\Debug\DTO1.csproj.AssemblyReference.cache
 D:\CNPM\QLCH2\finalll\Main\DTO1\obj\Debug\DTO1.csproj.CoreCompileInputs.cache
 D:\CNPM\QLCH2\finalll\Main\DTO1\obj\Debug\DTO1.dll
 D:\CNPM\QLCH2\finalll\Main\DTO1\obj\Debug\DTO1.pdb
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DTO1\bin\Debug\DTO1.dll
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DTO1\bin\Debug\DTO1.pdb
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DTO1\obj\Debug\DTO1.csproj.AssemblyReference.cache
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DTO1\obj\Debug\DTO1.csproj.CoreCompileInputs.cache
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DTO1\obj\Debug\DTO1.dll
+D:\Bai Tap\Cuu2\fa1\finalll\Main\DTO1\obj\Debug\DTO1.pdb

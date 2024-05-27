@@ -25,6 +25,7 @@ namespace WindowsFormsApp3
         bool checkPhong1 = false;
         string emailCH;
         string tenTrung;
+        string maNt;
         public FormNewHD(string ma)
         {
             InitializeComponent();
@@ -93,7 +94,30 @@ namespace WindowsFormsApp3
             }
             reader.Close();
         }
+        private void getmaNT()
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
 
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "select MaNguoiThue from Nguoi_thue where Ten = N'" + txTen.Text.Trim() + " '";
+            sqlCm.Connection = sql;
+            SqlDataReader reader = sqlCm.ExecuteReader();
+            while (reader.Read())
+            {
+                string tmp = reader.GetString(0);
+                maNt = tmp;
+            }
+            reader.Close();
+            sql.Close();
+        }
         private bool isEmail(string email)
         {
             if (string.IsNullOrEmpty(email))
@@ -119,7 +143,7 @@ namespace WindowsFormsApp3
                 MessageBox.Show("Số điện thoại không phù hợp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            
             if ((checkDiaChi(tbDC.Text.Trim()) == true) && (checkSDT(tbSDT.Text.Trim()) == true) && (checkTen(txTen.Text.Trim()) == true))
             {
                 if (MessageBox.Show("Khách hàng này đang thuê một phòng. Bạn có muốn lập thêm hợp đồng của khách hàng này với một phòng khác không?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -149,7 +173,7 @@ namespace WindowsFormsApp3
                     }
                     HopDong h1 = new HopDong(dateTimePickerNL.Text.ToString(), Convert.ToInt32(tbSNG.Text.Trim()), dateTimePickerNKT.Text.ToString(), comboBox1.Text.Trim());
                     getTenTRung(txTen.Text.Trim());
-
+                    MessageBox.Show("ggg");
                     runN(h1, n, tenTrung);
                 }
             }
@@ -194,12 +218,14 @@ namespace WindowsFormsApp3
         }
         private void runN(HopDong h, NguoiThue n, string trung)
         {
+            MessageBox.Show("gg1g");
+            getmaNT();
+            MessageBox.Show(maNt);
+            funcAddHD1(h.getNgayKetThuc().Trim(), Convert.ToInt32(h.getSoNguoi()), h.getNgayLap().Trim(), h.getTenPhong());
+            MessageBox.Show("ggg3");
 
-            funcAddHD(h.getNgayKetThuc().Trim(), Convert.ToInt32(h.getSoNguoi()), h.getNgayLap().Trim(), h.getTenPhong());
-
-
-            funcInsertPhongThueSH1(comboBox1.Text.Trim().ToString());
-
+            funcInsertPhongThueSH1(comboBox1.Text.Trim());
+            MessageBox.Show("ggg4");
             getMailCH();
 
             MailMessage mail = new MailMessage();
@@ -252,6 +278,7 @@ namespace WindowsFormsApp3
             reader.Close();
             sql.Close();
         }
+
         private void runC(HopDong h, NguoiThue n)
         {
 
@@ -354,7 +381,7 @@ namespace WindowsFormsApp3
             }
             SqlCommand sqlCm = new SqlCommand();
             sqlCm.CommandType = CommandType.Text;
-            sqlCm.CommandText = "select Ten from Nguoi_thue where Ten = '" + ten + "'";
+            sqlCm.CommandText = "select Ten from Nguoi_thue where Ten = N'" + ten + "'";
             sqlCm.Connection = sql;
             SqlDataReader reader = sqlCm.ExecuteReader();
             int kq = 0;
@@ -510,8 +537,57 @@ namespace WindowsFormsApp3
             sql.Close();
 
         }
+        private void funcAddHD1(string NKT, int songuoi, string NL, string tenPhong)
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
 
-        
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "exec insertToHD1 '" + maNt + "', '" + NKT + "', '" + songuoi + "', '" + NL + "', '" + tenPhong + "'";
+            sqlCm.Connection = sql;
+            int k = sqlCm.ExecuteNonQuery();
+            if (k > 0)
+            {
+                MessageBox.Show("Đã gửi cho chủ hộ, vui lòng chờ xác nhận!");
+            }
+            else
+            {
+                MessageBox.Show("Chưa xác nhận");
+            }
+            sql.Close();
+
+        }
+        private void getMnt(string ten)
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "select MaNguoiThue from Nguoi_thue where Ten = '" + ten + "'";
+            sqlCm.Connection = sql;
+            SqlDataReader reader = sqlCm.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string tmp = reader.GetString(0);
+                maNt = tmp;
+            }
+            reader.Close();
+            sql.Close();
+        }
         private void funcInsertPhongThueSH(string tenPhong)
         {
             if (sql == null)

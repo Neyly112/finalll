@@ -510,8 +510,22 @@ begin
 end
 go
 
+create proc insertToHD1
+@maNT varchar(50), @NgayKT date, @nguoi int, @NgayBD date, @maPhong varchar(50)
+as 
+begin
+	declare @maHD varchar(10)
+	declare @maQL varchar(10)
+	declare @maCH varchar(10)
+	
+	set @maHD = dbo.insertTableHD()
+	set @maQL = dbo.getTopMaQL()
+	set @maCH = dbo.getTopMa()
+	
+	insert into Hop_dong values(@maHD, @NgayBD, @NgayKT, @nguoi,  @maPhong, N'Chưa xác nhận', @maCH, @maNT, @maQL)
+end
 
-
+go
 create function getTopMaQL() 
 returns varchar(10) as
 	begin 
@@ -569,4 +583,6 @@ select * from Thong_ke
 select * from Phong_thue_so_huu
 select * from Hoa_don
 select * from Hop_dong
-select SoDienThoai
+select MaNguoiThue from Nguoi_thue where Ten = N'Dương'
+
+exec insertToHD1 'NT004', '2024-5-31', 2, '2024-5-27', 'P009'

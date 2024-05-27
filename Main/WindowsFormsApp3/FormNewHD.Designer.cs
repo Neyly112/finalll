@@ -39,8 +39,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePickerNL = new WindowsFormsApp3.UI.DatePicker();
-            this.dateTimePickerNKT = new WindowsFormsApp3.UI.DatePicker();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tbSNG = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
@@ -48,6 +46,8 @@
             this.tbSDT = new System.Windows.Forms.TextBox();
             this.txTen = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerNKT = new WindowsFormsApp3.UI.DatePicker();
+            this.dateTimePickerNL = new WindowsFormsApp3.UI.DatePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,42 +184,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dateTimePickerNL
-            // 
-            this.dateTimePickerNL.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePickerNL.BorderColor = System.Drawing.Color.DarkKhaki;
-            this.dateTimePickerNL.BorderSize = 1;
-            this.dateTimePickerNL.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F);
-            this.dateTimePickerNL.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePickerNL.Font = new System.Drawing.Font("Times New Roman", 16.2F);
-            this.dateTimePickerNL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNL.Location = new System.Drawing.Point(400, 535);
-            this.dateTimePickerNL.MinDate = new System.DateTime(2024, 5, 22, 0, 0, 0, 0);
-            this.dateTimePickerNL.MinimumSize = new System.Drawing.Size(4, 35);
-            this.dateTimePickerNL.Name = "dateTimePickerNL";
-            this.dateTimePickerNL.Size = new System.Drawing.Size(612, 39);
-            this.dateTimePickerNL.SkinColor = System.Drawing.SystemColors.ControlLight;
-            this.dateTimePickerNL.TabIndex = 40;
-            this.dateTimePickerNL.TextColor = System.Drawing.SystemColors.WindowText;
-            // 
-            // dateTimePickerNKT
-            // 
-            this.dateTimePickerNKT.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePickerNKT.BorderColor = System.Drawing.Color.DarkKhaki;
-            this.dateTimePickerNKT.BorderSize = 1;
-            this.dateTimePickerNKT.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F);
-            this.dateTimePickerNKT.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePickerNKT.Font = new System.Drawing.Font("Times New Roman", 16.2F);
-            this.dateTimePickerNKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNKT.Location = new System.Drawing.Point(400, 609);
-            this.dateTimePickerNKT.MinDate = new System.DateTime(2024, 5, 22, 0, 0, 0, 0);
-            this.dateTimePickerNKT.MinimumSize = new System.Drawing.Size(4, 35);
-            this.dateTimePickerNKT.Name = "dateTimePickerNKT";
-            this.dateTimePickerNKT.Size = new System.Drawing.Size(612, 39);
-            this.dateTimePickerNKT.SkinColor = System.Drawing.SystemColors.ControlLight;
-            this.dateTimePickerNKT.TabIndex = 41;
-            this.dateTimePickerNKT.TextColor = System.Drawing.SystemColors.WindowText;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -293,6 +257,44 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(612, 39);
             this.comboBox1.TabIndex = 52;
+            // 
+            // dateTimePickerNKT
+            // 
+            this.dateTimePickerNKT.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimePickerNKT.BorderColor = System.Drawing.Color.DarkKhaki;
+            this.dateTimePickerNKT.BorderSize = 1;
+            this.dateTimePickerNKT.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F);
+            this.dateTimePickerNKT.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePickerNKT.Font = new System.Drawing.Font("Times New Roman", 16.2F);
+            this.dateTimePickerNKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerNKT.Location = new System.Drawing.Point(400, 609);
+            this.dateTimePickerNKT.MinDate = new System.DateTime(2024, 5, 27, 0, 0, 0, 0);
+            this.dateTimePickerNKT.MinimumSize = new System.Drawing.Size(4, 35);
+            this.dateTimePickerNKT.Name = "dateTimePickerNKT";
+            this.dateTimePickerNKT.Size = new System.Drawing.Size(612, 39);
+            this.dateTimePickerNKT.SkinColor = System.Drawing.SystemColors.ControlLight;
+            this.dateTimePickerNKT.TabIndex = 41;
+            this.dateTimePickerNKT.TextColor = System.Drawing.SystemColors.WindowText;
+            this.dateTimePickerNKT.Value = new System.DateTime(2024, 5, 27, 20, 16, 11, 0);
+            // 
+            // dateTimePickerNL
+            // 
+            this.dateTimePickerNL.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimePickerNL.BorderColor = System.Drawing.Color.DarkKhaki;
+            this.dateTimePickerNL.BorderSize = 1;
+            this.dateTimePickerNL.CalendarFont = new System.Drawing.Font("Times New Roman", 16.2F);
+            this.dateTimePickerNL.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePickerNL.Font = new System.Drawing.Font("Times New Roman", 16.2F);
+            this.dateTimePickerNL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerNL.Location = new System.Drawing.Point(400, 535);
+            this.dateTimePickerNL.MinDate = new System.DateTime(2024, 5, 27, 0, 0, 0, 0);
+            this.dateTimePickerNL.MinimumSize = new System.Drawing.Size(4, 35);
+            this.dateTimePickerNL.Name = "dateTimePickerNL";
+            this.dateTimePickerNL.Size = new System.Drawing.Size(612, 39);
+            this.dateTimePickerNL.SkinColor = System.Drawing.SystemColors.ControlLight;
+            this.dateTimePickerNL.TabIndex = 40;
+            this.dateTimePickerNL.TextColor = System.Drawing.SystemColors.WindowText;
+            this.dateTimePickerNL.Value = new System.DateTime(2024, 5, 27, 20, 16, 8, 0);
             // 
             // FormNewHD
             // 
