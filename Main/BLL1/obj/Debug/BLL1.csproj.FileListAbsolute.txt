@@ -109,6 +109,7 @@ D:\CNPM\QLCH4\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cache
 D:\CNPM\QLCH4\finalll\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
 D:\CNPM\QLCH4\finalll\Main\BLL1\obj\Debug\BLL1.dll
 D:\CNPM\QLCH4\finalll\Main\BLL1\obj\Debug\BLL1.pdb
+<<<<<<< Updated upstream
 D:\CNPM\QLCH5\finalll\Main\BLL1\bin\Debug\BLL1.dll
 D:\CNPM\QLCH5\finalll\Main\BLL1\bin\Debug\BLL1.pdb
 D:\CNPM\QLCH5\finalll\Main\BLL1\bin\Debug\DAO1.dll
@@ -121,6 +122,8 @@ D:\CNPM\QLCH5\finalll\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
 D:\CNPM\QLCH5\finalll\Main\BLL1\obj\Debug\BLL1.dll
 D:\CNPM\QLCH5\finalll\Main\BLL1\obj\Debug\BLL1.pdb
 =======
+=======
+>>>>>>> Stashed changes
 E:\GITHUB_AN\Finall7\finalll\Main\BLL1\bin\Debug\BLL1.dll
 E:\GITHUB_AN\Finall7\finalll\Main\BLL1\bin\Debug\BLL1.pdb
 E:\GITHUB_AN\Finall7\finalll\Main\BLL1\bin\Debug\DAO1.dll
@@ -132,6 +135,7 @@ E:\GITHUB_AN\Finall7\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.c
 E:\GITHUB_AN\Finall7\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CopyComplete
 E:\GITHUB_AN\Finall7\finalll\Main\BLL1\obj\Debug\BLL1.dll
 E:\GITHUB_AN\Finall7\finalll\Main\BLL1\obj\Debug\BLL1.pdb
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\bin\Debug\BLL1.dll
 D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\bin\Debug\BLL1.pdb
@@ -144,3 +148,5 @@ D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\obj\Debug\BLL1.csproj.CoreCompileInputs.cac
 D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\obj\Debug\BLL1.csproj.Up2Date
 D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\obj\Debug\BLL1.dll
 D:\Bai Tap\Cuu2\fa\finalll\Main\BLL1\obj\Debug\BLL1.pdb
+=======
+>>>>>>> Stashed changes
