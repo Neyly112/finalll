@@ -64,7 +64,7 @@ namespace WindowsFormsApp3
             
             SqlCommand sqlCm = new SqlCommand();
             sqlCm.CommandType = CommandType.Text;
-            sqlCm.CommandText = "exec getTenNguoiThue '" + tenPhong + "'";
+            sqlCm.CommandText = "select Ten from Nguoi_thue where MaNguoiThue = '" + maNguoiThue + "'";
             sqlCm.Connection = sql;
             SqlDataReader reader = sqlCm.ExecuteReader();
             while (reader.Read())
@@ -104,19 +104,51 @@ namespace WindowsFormsApp3
             if (kq > 0)
             {
                 MessageBox.Show("Đã hủy hợp đồng");
+
             }
             else
             {
                 MessageBox.Show("Hợp đồng không tồn tại");
             }
             sql.Close();
+
             funcDeletePhongThue();
-            deleteNT();
+            int tmp = checkSo();
+            MessageBox.Show(tmp.ToString());
+            if (tmp != 1)
+            {
+                deleteNT();
+            } 
+            
+           
             this.Hide();
             FormDanhSachHopDong f = new FormDanhSachHopDong(ma);
             f.ShowDialog();
         }
-
+        private int checkSo()
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "select MaNguoiThue from Hop_dong where MaNguoiThue = '" + maNguoiThue + "'";
+            sqlCm.Connection = sql;
+            SqlDataReader reader = sqlCm.ExecuteReader();
+            int kq = 0;
+            while (reader.Read())
+            {
+                kq++;
+            }
+            reader.Close();
+            sql.Close();
+            return kq;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             
@@ -220,6 +252,24 @@ namespace WindowsFormsApp3
             sqlCm.CommandText = "delete from Phong_thue_so_huu where MaPhong= '" + tenPhong + "'";
             sqlCm.Connection = sql;
             int kq = sqlCm.ExecuteNonQuery();
+            sql.Close();
+        }
+        private void deletePhongSoHuu()
+        {
+            if (sql == null)
+            {
+                sql = new SqlConnection(strSql);
+            }
+            if (sql.State == ConnectionState.Closed)
+            {
+                sql.Open();
+            }
+
+            SqlCommand sqlCm = new SqlCommand();
+            sqlCm.CommandType = CommandType.Text;
+            sqlCm.CommandText = "delete from Phong_thue_so_huu where MaNguoiThue = '" + maNguoiThue + "'";
+            sqlCm.Connection = sql;
+            sqlCm.ExecuteNonQuery();
             sql.Close();
         }
         private void FormHuyHopDong_Load(object sender, EventArgs e)

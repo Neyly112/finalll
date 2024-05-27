@@ -42,6 +42,7 @@
             // 
             // button4
             // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Font = new System.Drawing.Font("Times New Roman", 16.2F);
             this.button4.Location = new System.Drawing.Point(237, 422);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -59,7 +60,7 @@
             this.label2.Location = new System.Drawing.Point(427, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 51);
+            this.label2.Size = new System.Drawing.Size(171, 49);
             this.label2.TabIndex = 26;
             this.label2.Text = "Hóa đơn";
             // 
@@ -89,6 +90,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button1.Location = new System.Drawing.Point(517, 422);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -101,6 +103,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -109,7 +114,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(623, 266);
+            this.dataGridView1.Size = new System.Drawing.Size(536, 266);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -154,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(1052, 495);
+            this.ClientSize = new System.Drawing.Size(965, 518);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
@@ -164,6 +169,7 @@
             this.Controls.Add(this.Hoa_Don_Tien_Nuoc);
             this.Controls.Add(this.Hoa_Don_Tien__Gui_Xe);
             this.Controls.Add(this.Hoa_Don_Tien_Dien);
+            this.MinimumSize = new System.Drawing.Size(983, 565);
             this.Name = "FormXacNhanHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormXacNhanHoaDon";
